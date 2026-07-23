@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2 Degrees — Transformational Travel</title>
+<meta name="description" content="2 Degrees designs educational, cultural, and leadership experiences that connect people, expand perspectives, and inspire meaningful change." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#0c2b4e;
+  --navy-2:#103a66;
+  --blue:#1a9bd7;
+  --green:#8cc63f;
+  --green-d:#6faa2a;
+  --ink:#1c2b3a;
+  --muted:#5f7183;
+  --paper:#ffffff;
+  --mist:#eef5fb;
+  --mist-2:#e3eef8;
+  --line:rgba(12,43,78,.12);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --shadow:0 24px 60px -28px rgba(12,43,78,.45);
+  --maxw:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--paper);
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.08;color:var(--navy);letter-spacing:-.01em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+.eyebrow{font-family:var(--sans);font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:.72rem;color:var(--blue)}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:600;
+  font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;padding:.95rem 1.7rem;border-radius:40px;
+  cursor:pointer;border:1.5px solid transparent;transition:transform .35s var(--ease),background .35s var(--ease),color .35s var(--ease),box-shadow .35s var(--ease);
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-green{background:var(--green);color:#0c2b1a;box-shadow:0 14px 30px -14px rgba(140,198,63,.9)}
+.btn-green:hover{background:var(--green-d);color:#fff}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.65)}
+.btn-ghost:hover{background:#fff;color:var(--navy)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-2)}
+.btn-outline{background:transparent;border-color:var(--navy);color:var(--navy)}
+.btn-outline:hover{background:var(--navy);color:#fff}
+
+/* ---------- NAV ---------- */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s var(--ease),box-shadow .4s var(--ease),padding .4s var(--ease);padding:18px 0}
+header.nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 8px 30px -20px rgba(12,43,78,.6);padding:10px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand img{height:52px;width:auto;transition:height .4s var(--ease)}
+header.nav.scrolled .brand img{height:44px}
+.nav-links{display:flex;align-items:center;gap:clamp(1rem,2vw,2rem);list-style:none}
+.nav-links a{font-weight:500;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;position:relative;padding:.3rem 0;transition:color .3s}
+header.nav.scrolled .nav-links a{color:var(--navy)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--green);transition:width .35s var(--ease)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{padding:.7rem 1.4rem}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+.burger span{width:26px;height:2px;background:#fff;transition:.3s}
+header.nav.scrolled .burger span{background:var(--navy)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;
+  background:
+   linear-gradient(105deg,rgba(8,26,48,.86) 0%,rgba(8,26,48,.45) 45%,rgba(8,26,48,.15) 100%),
+   linear-gradient(120deg,#0c2b4e,#155a86),
+   url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+  transform:scale(1.12);animation:heroZoom 14s var(--ease) forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-top:120px;padding-bottom:60px}
+.hero-inner{max-width:720px}
+.hero h1{font-size:clamp(2.7rem,6.2vw,5rem);color:#fff;line-height:1.02}
+.hero h1 .thin{font-weight:400;font-style:italic;display:block}
+.hero .tag{font-family:var(--serif);font-style:italic;color:var(--green);font-size:clamp(1.4rem,3vw,2.1rem);margin:.6rem 0 1.4rem}
+.hero p{font-size:1.05rem;max-width:560px;color:rgba(255,255,255,.9);margin-bottom:1rem}
+.hero p.sub{font-size:.98rem;color:rgba(255,255,255,.72)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.8);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.scroll-hint .mouse{width:24px;height:38px;border:2px solid rgba(255,255,255,.6);border-radius:14px;position:relative}
+.scroll-hint .mouse::after{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:4px;height:8px;border-radius:3px;background:#fff;animation:scrollDot 1.6s infinite}
+@keyframes scrollDot{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}80%{opacity:0;transform:translate(-50%,10px)}}
+
+/* ---------- PILLARS ---------- */
+.pillars{background:#fff;padding:clamp(48px,7vw,84px) 0;position:relative;margin-top:-1px}
+.pillars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,3vw,2.5rem)}
+.pillar{text-align:center;padding:1rem;position:relative}
+.pillar:not(:last-child)::after{content:"";position:absolute;right:calc(-1 * clamp(.5rem,1.5vw,1.25rem));top:14%;height:72%;width:1px;background:var(--line)}
+.pillar .ic{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;margin:0 auto 1.1rem;color:#fff;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.pillar:hover .ic{transform:translateY(-6px) rotate(-4deg);box-shadow:var(--shadow)}
+.pillar:nth-child(1) .ic{background:var(--navy)}
+.pillar:nth-child(2) .ic{background:var(--blue)}
+.pillar:nth-child(3) .ic{background:var(--green)}
+.pillar:nth-child(4) .ic{background:var(--navy-2)}
+.pillar h3{font-size:1.15rem;letter-spacing:.04em;text-transform:uppercase;font-family:var(--sans);font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.pillar p{font-size:.9rem;color:var(--muted)}
+.pillar .ic svg{width:34px;height:34px}
+
+/* ---------- SECTION SHELL ---------- */
+section{position:relative}
+.section-pad{padding:clamp(56px,8vw,110px) 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto clamp(2.5rem,5vw,3.5rem)}
+.section-head h2{font-size:clamp(2rem,4.4vw,3.1rem);margin:.6rem 0 .8rem}
+.section-head p{color:var(--muted);font-size:1.02rem}
+.center-eyebrow{display:block;text-align:center}
+
+/* ---------- WHO WE WORK WITH ---------- */
+.who{background:var(--mist)}
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.2rem,2.5vw,2rem)}
+.who-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px -34px rgba(12,43,78,.5);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.who-card:hover{transform:translateY(-10px);box-shadow:0 34px 70px -34px rgba(12,43,78,.6)}
+.who-media{height:210px;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.who-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(12,43,78,.35));opacity:.7}
+.who-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.who-card:hover .who-media img{transform:scale(1.09)}
+.who-body{padding:1.6rem 1.5rem 1.9rem}
+.who-body h3{font-size:1.35rem;margin-bottom:.2rem}
+.who-body .sub{color:var(--blue);font-weight:600;font-size:.82rem;letter-spacing:.03em;margin-bottom:.8rem;display:block}
+.who-body p{font-size:.92rem;color:var(--muted)}
+.who-body .more{margin-top:1rem;font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green-d);display:inline-flex;gap:.4rem;align-items:center;transition:gap .3s}
+.who-card:hover .who-body .more{gap:.8rem}
+
+/* ---------- SIGNATURE EXPERIENCES (editorial hover reveal) ---------- */
+.exp{background:var(--navy);color:#fff}
+.exp .section-head h2{color:#fff}
+.exp .section-head p{color:rgba(255,255,255,.7)}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.exp-card{position:relative;height:340px;border-radius:16px;overflow:hidden;cursor:pointer;isolation:isolate}
+.exp-card .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1s var(--ease)}
+.exp-card:hover .bg{transform:scale(1.12)}
+.exp-card .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,26,46,.15) 0%,rgba(10,26,46,.35) 45%,rgba(10,26,46,.9) 100%);transition:background .5s var(--ease)}
+.exp-card:hover .veil{background:linear-gradient(180deg,rgba(10,26,46,.35) 0%,rgba(12,43,78,.6) 40%,rgba(9,22,40,.94) 100%)}
+.exp-card .content{position:absolute;inset:0;padding:1.6rem;display:flex;flex-direction:column;justify-content:flex-end;z-index:2}
+.exp-card .badge{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);display:grid;place-items:center;margin-bottom:auto;transition:background .4s}
+.exp-card:hover .badge{background:var(--green)}
+.exp-card .badge svg{width:24px;height:24px;color:#fff}
+.exp-card h3{color:#fff;font-family:var(--sans);font-weight:700;font-size:1.15rem;letter-spacing:.02em;text-transform:uppercase;transform:translateY(8px);transition:transform .5s var(--ease)}
+.exp-card:hover h3{transform:translateY(0)}
+.exp-card p{color:rgba(255,255,255,.86);font-size:.9rem;margin-top:.6rem;max-height:0;opacity:0;overflow:hidden;transform:translateY(10px);transition:max-height .55s var(--ease),opacity .5s var(--ease),transform .55s var(--ease)}
+.exp-card:hover p{max-height:120px;opacity:1;transform:translateY(0)}
+.exp-card .line{height:3px;width:0;background:var(--green);margin-top:1rem;transition:width .55s var(--ease) .05s}
+.exp-card:hover .line{width:56px}
+
+/* ---------- MEANING + SERVICES ---------- */
+.meaning{background:var(--mist)}
+.meaning-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.panel{background:#fff;border-radius:20px;padding:clamp(1.8rem,3vw,2.6rem);box-shadow:0 26px 60px -40px rgba(12,43,78,.5)}
+.panel > .eyebrow{margin-bottom:.4rem}
+.panel h3.ttl{font-size:1.7rem;margin-bottom:.4rem}
+.panel .lede{color:var(--muted);font-size:.95rem;margin-bottom:1.6rem}
+.story{display:flex;gap:1.1rem;padding:1.1rem 0;border-top:1px solid var(--line);cursor:default}
+.story:first-of-type{border-top:0}
+.story .num{flex:0 0 auto;width:40px;height:40px;border-radius:50%;border:2px solid var(--blue);color:var(--blue);font-weight:700;display:grid;place-items:center;font-family:var(--serif);transition:.4s var(--ease)}
+.story:hover .num{background:var(--blue);color:#fff;transform:scale(1.08)}
+.story h4{font-family:var(--sans);font-weight:700;text-transform:uppercase;font-size:.9rem;letter-spacing:.05em;color:var(--navy);margin-bottom:.25rem}
+.story p{font-size:.9rem;color:var(--muted)}
+.story p b{color:var(--green-d)}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:1.4rem}
+.svc{background:var(--mist);border-radius:14px;padding:1.1rem .6rem;text-align:center;transition:.4s var(--ease)}
+.svc:hover{background:var(--navy);transform:translateY(-5px)}
+.svc:hover .svc-ic{color:var(--green)}
+.svc:hover span{color:#fff}
+.svc-ic{width:34px;height:34px;margin:0 auto .5rem;color:var(--blue);transition:.4s}
+.svc-ic svg{width:100%;height:100%}
+.svc span{display:block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);transition:.4s}
+
+/* ---------- KIM ---------- */
+.kim{background:#fff}
+.kim-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.kim-photo{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5}
+.kim-photo .bg{position:absolute;inset:0;background-size:cover;background-position:center top;transition:transform 1s var(--ease)}
+.kim-photo:hover .bg{transform:scale(1.06)}
+.kim-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(12,43,78,.5))}
+.kim-body h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:.4rem 0 .3rem}
+.kim-body .role{color:var(--green-d);font-weight:700;letter-spacing:.02em;margin-bottom:1.2rem;font-size:1rem}
+.kim-body p{color:var(--muted);margin-bottom:1rem;max-width:52ch}
+.kim-traits{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin-top:1.6rem}
+.trait{display:flex;align-items:center;gap:.7rem;font-weight:600;color:var(--navy);font-size:.9rem}
+.trait .dot{width:34px;height:34px;border-radius:50%;background:var(--mist);display:grid;place-items:center;color:var(--blue);flex:0 0 auto;transition:.4s}
+.trait:hover .dot{background:var(--blue);color:#fff;transform:rotate(8deg)}
+.trait .dot svg{width:18px;height:18px}
+
+/* ---------- TESTIMONIALS ---------- */
+.quotes{background:var(--navy);color:#fff;overflow:hidden}
+.quotes .section-head h2{color:#fff}
+.q-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.q-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:2rem 1.8rem;transition:.5s var(--ease)}
+.q-card:hover{background:rgba(255,255,255,.11);transform:translateY(-8px)}
+.q-card .mark{font-family:var(--serif);font-size:3.4rem;line-height:.4;color:var(--green);height:26px;display:block}
+.q-card p{color:rgba(255,255,255,.9);font-size:.98rem;margin:.6rem 0 1.4rem;font-style:italic}
+.q-src{display:flex;align-items:center;gap:.8rem}
+.q-mono{width:44px;height:44px;border-radius:10px;background:var(--blue);display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:#fff;flex:0 0 auto}
+.q-src b{display:block;font-family:var(--sans);font-size:.9rem}
+.q-src span{font-size:.78rem;color:rgba(255,255,255,.6)}
+
+/* ---------- FINAL CTA ---------- */
+.finalcta{position:relative;color:#fff;text-align:center;overflow:hidden}
+.finalcta .bg{position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(12,43,78,.85),rgba(12,43,78,.9)),
+  linear-gradient(120deg,#0c2b4e,#155a86),
+  url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=80') center/cover}
+.finalcta .wrap{position:relative;z-index:2;padding:clamp(64px,9vw,120px) 0}
+.finalcta h2{color:#fff;font-size:clamp(2rem,4.6vw,3.4rem);margin-bottom:1rem}
+.finalcta p{max-width:620px;margin:0 auto 2rem;color:rgba(255,255,255,.86)}
+.finalcta .hero-actions{justify-content:center}
+
+/* ---------- FOOTER ---------- */
+footer.ft{background:#08203c;color:rgba(255,255,255,.72);padding:56px 0 30px}
+.ft-top{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:26px;margin-bottom:22px}
+.ft img{height:50px}
+.ft-nav{display:flex;flex-wrap:wrap;gap:1.4rem;list-style:none}
+.ft-nav a{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);transition:.3s}
+.ft-nav a:hover{color:var(--green)}
+.ft-social{display:flex;gap:.7rem}
+.ft-social a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;transition:.35s}
+.ft-social a:hover{background:var(--green);border-color:var(--green);transform:translateY(-3px)}
+.ft-social svg{width:17px;height:17px}
+.ft-bottom{font-size:.78rem;color:rgba(255,255,255,.5);text-align:center}
+
+/* ---------- SCROLL REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(38px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}.reveal.d6{transition-delay:.48s}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:980px){
+  .who-grid,.exp-grid,.q-grid{grid-template-columns:repeat(2,1fr)}
+  .meaning-grid,.kim-grid{grid-template-columns:1fr}
+  .kim-photo{max-width:440px;margin:0 auto}
+  .pillars-grid{grid-template-columns:repeat(2,1fr);gap:2.5rem}
+  .pillar::after{display:none}
+}
+@media(max-width:760px){
+  .nav-links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:var(--navy);flex-direction:column;justify-content:center;gap:1.6rem;transform:translateX(100%);transition:transform .45s var(--ease);padding:2rem;z-index:110}
+  .nav-links.open{transform:none}
+  .nav-links a{color:#fff !important;font-size:1rem}
+  header.nav.scrolled .nav-links a{color:#fff}
+  .nav-links .nav-cta{color:#0c2b1a}
+  .burger{display:flex;z-index:120}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  header.nav.scrolled .burger.open span{background:#fff}
+}
+@media(max-width:560px){
+  .who-grid,.exp-grid,.q-grid,.services-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .pillars-grid{grid-template-columns:1fr}
+  .kim-traits{grid-template-columns:1fr}
+  .hero-actions .btn{flex:1 1 100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="2 Degrees home">
+      <img src="https://cdn-ileldki.nitrocdn.com/QPdKdDRKSxeStwqUUsMLZMyWhldKdUAl/assets/images/optimized/rev-0dd8287/2degreestravel.com/wp-content/uploads/2024/10/2-Degrees-Travel-Transparent-Logo.png" alt="2 Degrees Transformational Travel" />
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#who">Schools</a></li>
+        <li><a href="#who">Organizations</a></li>
+        <li><a href="#experiences">Programs</a></li>
+        <li><a href="#meaning">About</a></li>
+        <li><a href="#quotes">Stories</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="btn btn-green nav-cta">Inquire Now</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <h1 class="reveal in">Creating the Shift<span class="thin">Through Global Experiences</span></h1>
+      <div class="tag reveal in d1">Learn. Lead. Impact.</div>
+      <p class="reveal in d2">We design educational, cultural, and leadership experiences that connect people, expand perspectives, and inspire meaningful change.</p>
+      <p class="sub reveal in d3">From schools and international delegations to community partnerships and sustainability initiatives — every experience is intentionally designed to create confident leaders, stronger communities, and lasting global impact.</p>
+      <div class="hero-actions reveal in d4">
+        <a href="#experiences" class="btn btn-green">Explore Programs</a>
+        <a href="#contact" class="btn btn-ghost">Plan Your Journey</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="mouse"></div>Scroll</div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="wrap">
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Connect</h3><p>Bringing people, cultures, and communities together.</p>
+      </div>
+      <div class="pillar reveal d1">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <h3>Learn</h3><p>Expanding minds through experience and discovery.</p>
+      </div>
+      <div class="pillar reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4a1 1 0 0 1 1-1h11l-2 4 2 4H5"/><path d="M4 22h4"/></svg></div>
+        <h3>Lead</h3><p>Developing confident leaders who inspire and influence.</p>
+      </div>
+      <div class="pillar reveal d3">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Impact</h3><p>Creating meaningful change that lasts beyond the journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE WORK WITH -->
+<section class="who section-pad" id="who">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow center-eyebrow">Who We Work With</span>
+      <h2>Partners in transformation</h2>
+    </div>
+    <div class="who-grid">
+      <article class="who-card reveal">
+        <div class="who-media"><img loading="lazy" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80" alt="Students" onerror="this.style.display='none'"></div>
+        <div class="who-body">
+          <h3>Schools</h3>
+          <span class="sub">Transform Learning Through Experience</span>
+          <p>We partner with educators to create experiential learning journeys that prepare students to be real-world ready — from outdoor education to industry immersion with the leaders shaping innovation and the future.</p>
+          <span class="more">Explore →</span>
+        </div>
+      </article>
+      <article class="who-card reveal d1">
+        <div class="who-media"><img loading="lazy" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80" alt="Organizations" onerror="this.style.display='none'"></div>
+        <div class="who-body">
+          <h3>Government &amp; Organizations</h3>
+          <span class="sub">Building Connections That Create Opportunity</span>
+          <p>We design and facilitate international delegations, strategic visits, cultural exchanges, and sustainability initiatives that strengthen collaboration and create long-term value.</p>
+          <span class="more">Explore →</span>
+        </div>
+      </article>
+      <article class="who-card reveal d2">
+        <div class="who-media"><img loading="lazy" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="Partnerships" onerror="this.style.display='none'"></div>
+        <div class="who-body">
+          <h3>Partnerships &amp; Giving Back</h3>
+          <span class="sub">Stronger Communities Through Collaboration</span>
+          <p>We connect schools, cultural groups, businesses, governments, and non-profit organizations to create opportunities that support education, understanding, and community development.</p>
+          <span class="more">Explore →</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE EXPERIENCES -->
+<section class="exp section-pad" id="experiences">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow center-eyebrow">Signature Experiences</span>
+      <h2>Journeys designed to move you</h2>
+      <p>Hover any experience to discover more.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card reveal" style="--i:0">
+        <div class="bg" style="background-image:linear-gradient(120deg,#0c2b4e,#155a86),url('https://images.unsplash.com/photo-1609825488888-3a766db05542?auto=format&fit=crop&w=1000&q=80')"></div>
+        <div class="veil"></div>
+        <div class="content">
+          <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg></div>
+          <h3>Vancouver Programs</h3>
+          <p>Experiential learning in Canada's most inspiring classroom — mountains, ocean, and city as your campus.</p>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="exp-card reveal d1">
+        <div class="bg" style="background-image:linear-gradient(120deg,#0c2b4e,#0f7a8a),url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1000&q=80')"></div>
+        <div class="veil"></div>
+        <div class="content">
+          <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0L12 5.35l-.77-.77a5.4 5.4 0 0 0-7.65 7.65l.77.77L12 21l7.65-8 .77-.77a5.4 5.4 0 0 0 0-7.65z"/></svg></div>
+          <h3>Philippines Service Trips</h3>
+          <p>Meaningful service and cultural immersion that creates lasting impact — for students and communities alike.</p>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="exp-card reveal d2">
+        <div class="bg" style="background-image:linear-gradient(120deg,#0c2b4e,#2f6d2a),url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=80')"></div>
+        <div class="veil"></div>
+        <div class="content">
+          <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 21h16L14 3"/><path d="m9 12 3-3 3 3"/></svg></div>
+          <h3>Outdoor Leadership</h3>
+          <p>Build resilience, teamwork, and confidence through adventure in the wild — lessons that last a lifetime.</p>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="bg" style="background-image:linear-gradient(120deg,#0c2b4e,#3f7d1f),url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1000&q=80')"></div>
+        <div class="veil"></div>
+        <div class="content">
+          <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></div>
+          <h3>Sustainability &amp; Climate Action</h3>
+          <p>Inspiring action today for a more sustainable tomorrow — hands-on with the innovators driving change.</p>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="exp-card reveal d1">
+        <div class="bg" style="background-image:linear-gradient(120deg,#0c2b4e,#123a66),url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=80')"></div>
+        <div class="veil"></div>
+        <div class="content">
+          <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+          <h3>Innovation &amp; Industry</h3>
+          <p>Connect with the leaders and innovators shaping the future across the world's most dynamic industries.</p>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="exp-card reveal d2">
+        <div class="bg" style="background-image:linear-gradient(120deg,#0c2b4e,#1a6f7d),url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80')"></div>
+        <div class="veil"></div>
+        <div class="content">
+          <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Faculty-Led Custom Programs</h3>
+          <p>Tailored experiences designed around your goals and curriculum — built collaboratively, delivered flawlessly.</p>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEANING + SERVICES -->
+<section class="meaning section-pad" id="meaning">
+  <div class="wrap meaning-grid">
+    <div class="panel reveal">
+      <span class="eyebrow">The Meaning Behind 2 Degrees</span>
+      <h3 class="ttl">Three stories, one mission</h3>
+      <p class="lede">Three beautiful ideas that all support the same purpose.</p>
+      <div class="story">
+        <div class="num">1</div>
+        <div><h4>Two Degrees of Separation</h4><p>You're never as far from the experience, opportunity, partnership, or destination you seek as you think. We simply connect the dots.</p></div>
+      </div>
+      <div class="story">
+        <div class="num">2</div>
+        <div><h4>A Two-Degree Shift in Direction</h4><p>A tiny adjustment in course can lead to an entirely different destination. One experience. One conversation. One connection. That's how life-changing moments happen.</p></div>
+      </div>
+      <div class="story">
+        <div class="num">3</div>
+        <div><h4>Two Degrees of Climate Change</h4><p>Scientists tell us that just two degrees can determine the future of our planet. Small shifts create <b>extraordinary impact</b>.</p></div>
+      </div>
+    </div>
+    <div class="panel reveal d1">
+      <span class="eyebrow">Included In Your Experience</span>
+      <h3 class="ttl">We handle the details</h3>
+      <p class="lede">So you can focus on the impact. Every experience is customizable.</p>
+      <div class="services-grid">
+        <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div><span>Airfare</span></div>
+        <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></div><span>Accommodation</span></div>
+        <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><circle cx="16" cy="18" r="2"/></svg></div><span>Ground Transport</span></div>
+        <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div><span>Group Leader</span></div>
+        <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div><span>Cultural Exchange</span></div>
+        <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div><span>Activities</span></div>
+        <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2M4 2v6M6 2v6"/><path d="M18 2c-1.5 0-3 2-3 5s1.5 4 3 4v11"/></svg></div><span>Meals / Food</span></div>
+        <div class="svc"><div class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></div><span>Faculty Support</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KIM -->
+<section class="kim section-pad">
+  <div class="wrap kim-grid">
+    <div class="kim-photo reveal">
+      <div class="bg" style="background-image:linear-gradient(160deg,#0c2b4e33,#0c2b4e66),url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80')"></div>
+    </div>
+    <div class="kim-body reveal d1">
+      <span class="eyebrow">Meet Kim Carvajal</span>
+      <h2>A strategist for global impact</h2>
+      <div class="role">Global Experience Strategist</div>
+      <p>Kim believes that travel is one of the most powerful tools for learning, leadership, and creating meaningful change.</p>
+      <p>With decades of experience building international relationships and designing transformative educational experiences, she brings together people, cultures, and communities in ways that inspire growth, understanding, and lasting impact.</p>
+      <div class="kim-traits">
+        <div class="trait"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span>International Experience</div>
+        <div class="trait"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>Relationship Builder</div>
+        <div class="trait"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>Purpose-Driven</div>
+        <div class="trait"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg></span>Impact Focused</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="quotes section-pad" id="quotes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow center-eyebrow">What Our Partners Say</span>
+      <h2>Trusted by leading schools</h2>
+    </div>
+    <div class="q-grid">
+      <div class="q-card reveal">
+        <span class="mark">"</span>
+        <p>Our students return home with broader perspectives, stronger leadership skills, and a deeper sense of purpose.</p>
+        <div class="q-src"><div class="q-mono">A</div><div><b>Ateneo de Manila</b><span>High School</span></div></div>
+      </div>
+      <div class="q-card reveal d1">
+        <span class="mark">"</span>
+        <p>2 Degrees creates experiences that are seamless, meaningful, and truly aligned with our educational goals.</p>
+        <div class="q-src"><div class="q-mono">X</div><div><b>Xavier School</b><span>Partner Institution</span></div></div>
+      </div>
+      <div class="q-card reveal d2">
+        <span class="mark">"</span>
+        <p>A professional team that goes above and beyond to ensure our students have life-changing experiences.</p>
+        <div class="q-src"><div class="q-mono">C</div><div><b>Cebu International School</b><span>Partner Institution</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="finalcta" id="contact">
+  <div class="bg"></div>
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Ready to Create the Shift?</h2>
+      <p>Whether you're a school looking to inspire students, an organization building global partnerships, or a community creating meaningful impact — we'd love to help design your next experience.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-green">Inquire Now</a>
+        <a href="#contact" class="btn btn-ghost">Schedule a Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <img src="https://cdn-ileldki.nitrocdn.com/QPdKdDRKSxeStwqUUsMLZMyWhldKdUAl/assets/images/optimized/rev-0dd8287/2degreestravel.com/wp-content/uploads/2024/10/2-Degrees-Travel-Transparent-Logo.png" alt="2 Degrees" />
+      <ul class="ft-nav">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#who">Schools</a></li>
+        <li><a href="#who">Organizations</a></li>
+        <li><a href="#experiences">Programs</a></li>
+        <li><a href="#meaning">About</a></li>
+        <li><a href="#quotes">Stories</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="ft-social">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4 0 4.75 2.65 4.75 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95s-2.07 1.4-2.07 2.85V21H9z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.8h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-bottom">© 2026 2 Degrees Transformational Travel. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+// Sticky nav state
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>60);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+// Mobile menu
+const burger=document.getElementById('burger');
+const links=document.getElementById('navLinks');
+burger.addEventListener('click',()=>{burger.classList.toggle('open');links.classList.toggle('open')});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');links.classList.remove('open')}));
+
+// Scroll reveal
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+
+// Subtle parallax on hero
+const heroBg=document.querySelector('.hero-bg');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  if(y<window.innerHeight){heroBg.style.transform=`scale(1) translateY(${y*0.18}px)`}
+},{passive:true});
+</script>
+</body>
+</html>
