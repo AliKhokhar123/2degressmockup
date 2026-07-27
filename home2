@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2 Degrees — Creating the Shift</title>
+<meta name="description" content="Educational, cultural, and leadership travel experiences that connect people, expand perspectives, and inspire meaningful change." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --ink:#1d1d1f;         /* Apple near-black text */
+  --sub:#6e6e73;         /* Apple secondary grey */
+  --hair:#d2d2d7;        /* Apple hairline */
+  --paper:#ffffff;
+  --mist:#f5f5f7;        /* Apple light section grey */
+  --navy:#0c2b4e;        /* brand */
+  --blue:#1a7fd4;        /* brand link blue */
+  --green:#6faa2a;       /* brand green accent */
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
+  --ease:cubic-bezier(.28,.11,.32,1);
+  --max:1000px;
+  --max-wide:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ---------- LINKS (Apple blue chevron links) ---------- */
+.link{color:var(--blue);font-size:1.05rem;font-weight:400;display:inline-flex;align-items:center;gap:.15em;letter-spacing:-.01em;transition:opacity .2s}
+.link:hover{text-decoration:underline}
+.link::after{content:"›";font-weight:400;transition:transform .25s var(--ease)}
+.link:hover::after{transform:translateX(3px)}
+.link.wide{gap:.35em}
+
+/* ---------- PILL BUTTON ---------- */
+.pill{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-size:1rem;font-weight:400;padding:.7em 1.35em;border-radius:980px;letter-spacing:-.01em;transition:background .25s var(--ease),transform .25s var(--ease)}
+.pill:hover{background:#0a6dbd}
+.pill.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+.pill.ghost:hover{background:#fff;color:var(--navy);border-color:#fff}
+.pill.dark{background:var(--navy)}
+.pill.dark:hover{background:#123c69}
+
+/* ---------- NAV (Apple frosted top bar) ---------- */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:88px;background:transparent;border-bottom:1px solid transparent;transition:background .45s var(--ease),border-color .45s var(--ease),height .45s var(--ease)}
+header.nav.scrolled{background:rgba(9,26,46,.72);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.12);height:74px}
+.nav-inner{max-width:var(--max-wide);height:100%;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand img{height:76px;width:auto;transition:height .45s var(--ease)}
+header.nav.scrolled .nav-brand img{height:56px}
+.nav-links{display:flex;align-items:center;gap:clamp(1.1rem,2.4vw,2.6rem);list-style:none}
+.nav-links a{font-size:.82rem;font-weight:400;color:#fff;opacity:.88;letter-spacing:-.01em;transition:opacity .2s,color .2s}
+.nav-links a:hover{opacity:1;color:#8fd14f}
+.nav-inq{font-size:.82rem;color:#7cc0f7 !important;opacity:1 !important;font-weight:500 !important}
+.burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:6px}
+.burger span{width:20px;height:1.5px;background:#fff;transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;text-align:center;color:#fff;overflow:hidden;min-height:600px;height:86vh;display:flex;align-items:center;justify-content:center}
+.hero-bg{position:absolute;inset:0;background:#081a30 url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2600&q=90') center 42%/cover no-repeat;transform:scale(1.08);animation:heroZoom 18s var(--ease) forwards}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,14,26,.62) 0%,rgba(4,14,26,.32) 45%,rgba(4,14,26,.5) 100%)}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero-copy{position:relative;z-index:2;padding:0 22px}
+.hero h1{font-size:clamp(2.9rem,6.4vw,5.4rem);font-weight:600;letter-spacing:-.028em;line-height:1.04;text-shadow:0 2px 40px rgba(0,0,0,.4)}
+.hero .lede{font-size:clamp(1.15rem,2.2vw,1.65rem);font-weight:400;letter-spacing:-.01em;margin-top:.5em;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.hero-cta{margin-top:1.9em;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* ---------- STACKED FEATURE (Apple full-width promo) ---------- */
+.feature{text-align:center;overflow:hidden}
+.feature.light{background:var(--mist)}
+.feature.paper{background:var(--paper)}
+.feature .fc{padding:clamp(64px,8vw,104px) 22px 0;position:relative;z-index:2}
+.feature h2{font-size:clamp(2.2rem,4.8vw,3.5rem);font-weight:600;letter-spacing:-.022em;line-height:1.05}
+.feature .kicker{color:var(--green);font-weight:600}
+.feature .tagline{font-size:clamp(1.15rem,2.2vw,1.55rem);font-weight:400;color:var(--sub);letter-spacing:-.01em;margin-top:.4em;max-width:640px;margin-left:auto;margin-right:auto}
+.feature.dark .tagline{color:rgba(255,255,255,.82)}
+.feature .flinks{margin-top:1em;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
+.feature-img{margin:40px auto 0;max-width:var(--max-wide);width:100%;padding:0 22px}
+.feature-img img{width:100%;height:auto;max-height:600px;object-fit:cover;border-radius:20px}
+
+/* dark hero-style feature with text over image */
+.feature.overlay{position:relative;color:#fff;min-height:520px;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center}
+.feature.overlay::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,18,34,.68),rgba(6,18,34,.5) 50%,rgba(6,18,34,.66)),radial-gradient(ellipse at center,rgba(6,18,34,.45),transparent 62%)}
+.feature.overlay .fc{padding-top:0;padding-bottom:0}
+.feature.overlay h2{text-shadow:0 2px 30px rgba(0,0,0,.45)}
+.feature.overlay .tagline{text-shadow:0 1px 22px rgba(0,0,0,.5)}
+.feature.overlay .fc{color:#fff}
+.feature.overlay h2{color:#fff}
+.feature.overlay .tagline{color:rgba(255,255,255,.9)}
+
+/* ---------- TWO-UP TILE GRID (Apple product tiles) ---------- */
+.tiles{background:var(--paper);padding:12px 22px}
+.tiles-grid{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{position:relative;border-radius:20px;overflow:hidden;min-height:480px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;text-align:left;padding:0 32px 34px;background-size:cover;background-position:center}
+.tile::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,18,34,0) 24%,rgba(6,18,34,.28) 56%,rgba(6,18,34,.84) 100%);z-index:0}
+.tile>*{position:relative;z-index:1}
+.tile h3{font-size:clamp(1.8rem,2.8vw,2.4rem);font-weight:600;letter-spacing:-.02em;color:#fff;text-shadow:0 2px 22px rgba(0,0,0,.4)}
+.tile .sub{font-size:1.05rem;font-weight:400;margin-top:.2em;letter-spacing:-.01em;color:rgba(255,255,255,.9);text-shadow:0 1px 16px rgba(0,0,0,.45)}
+.tile .tlinks{margin-top:.85em;display:flex;gap:1.3rem}
+.tile .link,.tile .link::after{color:#7cc0f7}
+
+/* ---------- WHO WE WORK WITH (three simple tiles) ---------- */
+.who{background:var(--mist);padding:clamp(70px,9vw,120px) 22px}
+.who .head{text-align:center;max-width:var(--max);margin:0 auto clamp(2.4rem,5vw,3.6rem)}
+.who h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:600;letter-spacing:-.02em}
+.who .head p{font-size:1.15rem;color:var(--sub);margin-top:.5em;letter-spacing:-.01em}
+.who-grid{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.wc{background:#fff;border-radius:20px;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.wc:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(0,0,0,.28)}
+.wc .m{aspect-ratio:16/11;overflow:hidden}
+.wc .m img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.wc:hover .m img{transform:scale(1.06)}
+.wc .b{padding:26px 26px 30px;text-align:center}
+.wc h3{font-size:1.4rem;font-weight:600;letter-spacing:-.015em}
+.wc p{color:var(--sub);font-size:.98rem;margin:.5em 0 1em}
+
+/* ---------- MEANING BAND ---------- */
+.meaning{background:var(--navy);color:#fff;padding:clamp(78px,10vw,128px) 22px;text-align:center}
+.meaning .mh{max-width:var(--max);margin:0 auto clamp(2.6rem,5vw,3.8rem)}
+.meaning .mh .k{color:var(--green);font-weight:600;letter-spacing:-.01em;font-size:1rem}
+.meaning .mh h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:600;letter-spacing:-.02em;margin-top:.35em;color:#fff;line-height:1.06}
+.mgrid{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(30px,4vw,56px)}
+.mitem{padding:0 10px}
+.mitem .sym{font-size:clamp(3rem,5vw,4rem);font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--green)}
+.mitem h3{font-size:1.2rem;font-weight:600;margin:.65em 0 .35em;letter-spacing:-.01em;color:#fff}
+.mitem p{font-size:.98rem;color:rgba(255,255,255,.72);line-height:1.55;max-width:32ch;margin:0 auto}
+
+/* ---------- QUOTE (single big Apple-style pull quote) ---------- */
+.pull{background:var(--paper);padding:clamp(80px,11vw,150px) 22px;text-align:center}
+.pull blockquote{max-width:880px;margin:0 auto;font-size:clamp(1.7rem,3.6vw,2.6rem);font-weight:500;letter-spacing:-.02em;line-height:1.22}
+.pull .cite{margin-top:1.4em;color:var(--sub);font-size:1rem;letter-spacing:-.01em}
+.pull .cite b{color:var(--ink);font-weight:600}
+
+/* ---------- FINAL CTA ---------- */
+.cta{position:relative;text-align:center;color:#fff;overflow:hidden;padding:clamp(90px,12vw,160px) 22px;background:#081a30 url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2200&q=85') center/cover no-repeat}
+.cta::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,18,34,.7),rgba(6,18,34,.82))}
+.cta .c{position:relative;z-index:2;max-width:var(--max)}
+.cta{display:flex;align-items:center;justify-content:center}
+.cta h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:600;letter-spacing:-.022em;line-height:1.05}
+.cta p{font-size:clamp(1.1rem,2vw,1.4rem);color:rgba(255,255,255,.85);margin:.7em auto 1.6em;max-width:620px;letter-spacing:-.01em}
+.cta .row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* ---------- FOOTER (Apple slim footer) ---------- */
+footer.ft{background:var(--mist);color:var(--sub);font-size:.8rem;padding:40px 22px 30px}
+.ft-in{max-width:var(--max-wide);margin:0 auto}
+.ft-top{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;padding-bottom:24px;border-bottom:1px solid var(--hair)}
+.ft-col h4{font-size:.8rem;color:var(--ink);font-weight:600;margin-bottom:.9em}
+.ft-col a{display:block;color:var(--sub);margin-bottom:.55em;transition:color .2s}
+.ft-col a:hover{color:var(--blue)}
+.ft-bot{padding-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;color:var(--sub)}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.09s}.reveal.d2{transition-delay:.18s}.reveal.d3{transition-delay:.27s}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .tiles-grid{grid-template-columns:1fr}
+  .who-grid{grid-template-columns:1fr;max-width:460px}
+  .mgrid{grid-template-columns:1fr;gap:46px;max-width:420px}
+  .tile{min-height:420px}
+}
+@media(max-width:720px){
+  .nav-links{position:fixed;inset:88px 0 auto;flex-direction:column;background:rgba(9,26,46,.97);backdrop-filter:blur(20px);gap:0;padding:8px 0;transform:translateY(-120%);transition:transform .4s var(--ease);border-bottom:1px solid rgba(255,255,255,.12)}
+  .nav-links.open{transform:none}
+  .nav-links li{width:100%;text-align:center}
+  .nav-links a{display:block;padding:14px;font-size:1rem}
+  .burger{display:flex}
+  .burger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+  .hero{height:82vh;min-height:520px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top" aria-label="2 Degrees home">
+      <img src="https://cdn-ileldki.nitrocdn.com/QPdKdDRKSxeStwqUUsMLZMyWhldKdUAl/assets/images/optimized/rev-0dd8287/2degreestravel.com/wp-content/uploads/2024/10/2-Degrees-Travel-Transparent-Logo.png" alt="2 Degrees" />
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#schools">Schools</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#who">Organizations</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#contact" class="nav-inq">Inquire</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-copy">
+    <h1>Creating the shift.</h1>
+    <p class="lede">Learn. Lead. Impact.</p>
+    <div class="hero-cta">
+      <a href="#programs" class="pill">Explore programs</a>
+      <a href="#contact" class="pill ghost">Plan your journey</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 1 — mission -->
+<section class="feature paper">
+  <div class="fc reveal">
+    <h2>Travel that changes people.</h2>
+    <p class="tagline">Educational, cultural, and leadership experiences designed to expand perspectives and inspire lasting change.</p>
+    <div class="flinks">
+      <a href="#programs" class="link">See the experiences</a>
+      <a href="#about" class="link">Our story</a>
+    </div>
+  </div>
+  <div class="feature-img reveal d1">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2400&q=88" alt="Students exploring together" />
+  </div>
+</section>
+
+<!-- TWO-UP TILES -->
+<section class="tiles">
+  <div class="tiles-grid">
+    <article class="tile text-light reveal" style="background-image:linear-gradient(180deg,rgba(6,18,34,.15),rgba(6,18,34,.55)),url('https://images.unsplash.com/photo-1609825488888-3a766db05542?auto=format&fit=crop&w=1400&q=85')">
+      <h3>Vancouver</h3>
+      <p class="sub">Mountains, ocean, and city as the classroom.</p>
+      <div class="tlinks"><a href="#programs" class="link">Learn more</a></div>
+    </article>
+    <article class="tile text-light reveal d1" style="background-image:linear-gradient(180deg,rgba(6,18,34,.15),rgba(6,18,34,.55)),url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1400&q=85')">
+      <h3>Philippines</h3>
+      <p class="sub">Service and immersion with lasting impact.</p>
+      <div class="tlinks"><a href="#programs" class="link">Learn more</a></div>
+    </article>
+    <article class="tile text-light reveal" style="background-image:linear-gradient(180deg,rgba(6,18,34,.15),rgba(6,18,34,.55)),url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1400&q=85')">
+      <h3>Outdoor Leadership</h3>
+      <p class="sub">Resilience and confidence, built in the wild.</p>
+      <div class="tlinks"><a href="#programs" class="link">Learn more</a></div>
+    </article>
+    <article class="tile text-light reveal d1" style="background-image:linear-gradient(180deg,rgba(6,18,34,.2),rgba(6,18,34,.6)),url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1400&q=85')">
+      <h3>Climate Action</h3>
+      <p class="sub">Hands-on with the people driving change.</p>
+      <div class="tlinks"><a href="#programs" class="link">Learn more</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- FEATURE OVERLAY — innovation -->
+<section class="feature overlay" id="programs" style="background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=2400&q=85')">
+  <div class="fc reveal">
+    <span class="kicker" style="color:#8fd14f">Innovation &amp; Industry</span>
+    <h2>Meet the people shaping the future.</h2>
+    <p class="tagline">Immersive access to the leaders and innovators driving the world's most dynamic industries.</p>
+    <div class="flinks" style="margin-top:1.6em">
+      <a href="#contact" class="pill">Design a program</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE WORK WITH -->
+<section class="who" id="who">
+  <div class="head reveal">
+    <h2>Who we work with.</h2>
+    <p>Partners in transformation — from classrooms to governments.</p>
+  </div>
+  <div class="who-grid">
+    <article class="wc reveal">
+      <div class="m"><img loading="lazy" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1100&q=85" alt="Schools"></div>
+      <div class="b" id="schools">
+        <h3>Schools</h3>
+        <p>Experiential learning that makes students real-world ready.</p>
+        <a href="#contact" class="link">Learn more</a>
+      </div>
+    </article>
+    <article class="wc reveal d1">
+      <div class="m"><img loading="lazy" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1100&q=85" alt="Organizations"></div>
+      <div class="b">
+        <h3>Organizations</h3>
+        <p>Delegations, exchanges, and initiatives that create value.</p>
+        <a href="#contact" class="link">Learn more</a>
+      </div>
+    </article>
+    <article class="wc reveal d2">
+      <div class="m"><img loading="lazy" src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1100&q=85" alt="Partnerships"></div>
+      <div class="b">
+        <h3>Partnerships</h3>
+        <p>Collaboration that builds stronger, more connected communities.</p>
+        <a href="#contact" class="link">Learn more</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- MEANING BAND -->
+<section class="meaning" id="about">
+  <div class="mh reveal">
+    <span class="k">The meaning behind 2 Degrees</span>
+    <h2>Small shifts. Extraordinary impact.</h2>
+  </div>
+  <div class="mgrid">
+    <div class="mitem reveal">
+      <div class="sym">2°</div>
+      <h3>Two degrees of separation</h3>
+      <p>You're never as far from the experience or partnership you seek as you think. We connect the dots.</p>
+    </div>
+    <div class="mitem reveal d1">
+      <div class="sym">2°</div>
+      <h3>A two-degree shift</h3>
+      <p>A small change in direction leads somewhere entirely new. That's how life-changing moments happen.</p>
+    </div>
+    <div class="mitem reveal d2">
+      <div class="sym">2°</div>
+      <h3>Two degrees of climate</h3>
+      <p>Just two degrees can decide the future of our planet. Small shifts create lasting change.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="pull" id="stories">
+  <blockquote class="reveal">"Our students return with broader perspectives, stronger leadership, and a deeper sense of purpose."</blockquote>
+  <div class="cite reveal d1"><b>Ateneo de Manila</b> · Partner School</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta" id="contact">
+  <div class="c reveal">
+    <h2>Ready to create the shift?</h2>
+    <p>Let's design your next transformational experience — for a school, an organization, or a community.</p>
+    <div class="row">
+      <a href="#" class="pill">Inquire now</a>
+      <a href="#" class="pill ghost">Schedule a call</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-top">
+      <div class="ft-col">
+        <h4>Experiences</h4>
+        <a href="#programs">Vancouver Programs</a>
+        <a href="#programs">Philippines Service</a>
+        <a href="#programs">Outdoor Leadership</a>
+        <a href="#programs">Climate Action</a>
+      </div>
+      <div class="ft-col">
+        <h4>Who We Serve</h4>
+        <a href="#schools">Schools</a>
+        <a href="#who">Organizations</a>
+        <a href="#who">Partnerships</a>
+      </div>
+      <div class="ft-col">
+        <h4>Company</h4>
+        <a href="#about">About</a>
+        <a href="#stories">Stories</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="ft-col">
+        <h4>Connect</h4>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span>© 2026 2 Degrees Transformational Travel. All rights reserved.</span>
+      <span>Learn. Lead. Impact.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Sticky nav: transparent over hero, solidifies on scroll
+const nav=document.querySelector('header.nav');
+const onNavScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);
+onNavScroll();
+window.addEventListener('scroll',onNavScroll,{passive:true});
+
+// Mobile menu
+const burger=document.getElementById('burger');
+const links=document.getElementById('navLinks');
+burger.addEventListener('click',()=>{burger.classList.toggle('open');links.classList.toggle('open')});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');links.classList.remove('open')}));
+
+// Scroll reveal
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
