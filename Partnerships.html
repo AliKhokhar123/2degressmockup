@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2 Degrees — Partnerships &amp; Giving Back</title>
+<meta name="description" content="Partner with 2 Degrees to create educational, cultural, and leadership experiences that inspire learning, strengthen communities, and leave a lasting impact." />
+<style>
+:root{
+  --ink:#1d1d1f;
+  --sub:#6e6e73;
+  --hair:#d2d2d7;
+  --paper:#ffffff;
+  --mist:#f5f5f7;
+  --navy:#0c2b4e;
+  --blue:#1a7fd4;
+  --green:#6faa2a;
+  --green-bright:#8fd14f;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  --ease:cubic-bezier(.28,.11,.32,1);
+  --max:1000px;
+  --max-wide:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:110px}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+/* ---------- LINKS ---------- */
+.link{color:var(--blue);font-size:1.05rem;font-weight:400;display:inline-flex;align-items:center;gap:.15em;letter-spacing:-.01em;transition:opacity .2s}
+.link:hover{text-decoration:underline}
+.link::after{content:"›";font-weight:400;transition:transform .25s var(--ease)}
+.link:hover::after{transform:translateX(3px)}
+/* ---------- PILL BUTTON ---------- */
+.pill{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-size:1rem;font-weight:500;padding:.7em 1.5em;border-radius:980px;letter-spacing:-.01em;border:0;cursor:pointer;font-family:inherit;transition:background .25s var(--ease),transform .25s var(--ease)}
+.pill:hover{background:#0a6dbd}
+.pill.ghost{background:transparent;color:var(--navy);border:1px solid var(--hair)}
+.pill.ghost:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pill.light{background:#fff;color:var(--navy)}
+.pill.light:hover{background:#eaf3fb}
+/* ---------- NAV (Apple light frosted bar) ---------- */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:110px;background:rgba(9,26,46,.72);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.12);transition:height .45s var(--ease)}
+header.nav.scrolled{height:88px}
+.nav-inner{max-width:var(--max-wide);height:100%;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand img{height:104px;width:auto;transition:height .45s var(--ease)}
+header.nav.scrolled .nav-brand img{height:74px}
+.nav-right{display:flex;align-items:center;gap:clamp(1rem,2.2vw,2.2rem)}
+.nav-links{display:flex;align-items:center;gap:clamp(1rem,2.2vw,2.2rem);list-style:none}
+.nav-links a{font-size:.9rem;font-weight:400;color:#fff;opacity:.88;letter-spacing:-.01em;transition:opacity .2s,color .2s}
+.nav-links a:hover{opacity:1;color:var(--green-bright)}
+.nav-cta{font-size:.92rem;padding:.55em 1.2em}
+.burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:6px}
+.burger span{width:20px;height:1.5px;background:#fff;transition:.3s}
+/* ---------- HERO ---------- */
+.phero{background:var(--mist);padding:calc(110px + clamp(30px,5vw,60px)) 22px clamp(40px,6vw,72px)}
+.phero-in{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:stretch}
+.phero h1{font-size:clamp(2.6rem,5.4vw,4.2rem);font-weight:600;letter-spacing:-.028em;line-height:1.04;color:var(--navy)}
+.phero .kick{display:block;font-size:clamp(1.2rem,2.2vw,1.6rem);font-weight:600;color:var(--green);letter-spacing:-.01em;margin-top:.55em}
+.phero .lede{font-size:clamp(1.15rem,2vw,1.4rem);font-weight:600;color:var(--blue);letter-spacing:-.01em;margin-top:.9em;line-height:1.25}
+.phero .body{margin-top:1em;max-width:52ch}
+.phero .body p{color:var(--ink);font-size:1.02rem;margin-top:.7em;line-height:1.55}
+.phero .lli{margin-top:1.1em;font-size:1.2rem;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+.phero .lli .g{color:var(--green)}
+.phero .lli .b{color:var(--blue)}
+.phero-cta{margin-top:1.3em}
+.phero-img{display:flex}
+.phero-img img{width:100%;height:100%;min-height:100%;object-fit:cover;border-radius:24px;box-shadow:0 40px 80px -50px rgba(12,43,78,.5)}
+/* ---------- FULL-WIDTH IMAGE + CAPTION ---------- */
+.fullcap{position:relative;overflow:hidden}
+.fullcap .img{height:clamp(320px,46vw,520px);background-size:cover;background-position:center}
+.fullcap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,18,34,.15) 30%,rgba(6,18,34,.72) 100%)}
+.fullcap .cap{position:absolute;left:0;right:0;bottom:0;z-index:2;max-width:var(--max-wide);margin:0 auto;padding:0 22px clamp(28px,4vw,48px);color:#fff}
+.fullcap .cap h3{font-size:clamp(1.6rem,3.2vw,2.6rem);font-weight:600;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+.fullcap .cap p{font-size:clamp(1rem,1.6vw,1.2rem);color:rgba(255,255,255,.92);margin-top:.35em;max-width:60ch;text-shadow:0 1px 16px rgba(0,0,0,.4)}
+/* ---------- SECTION SHELL ---------- */
+.sec{padding:clamp(64px,8vw,110px) 22px}
+.sec.mist{background:var(--mist)}
+.sec .shead{max-width:var(--max);margin:0 auto clamp(2.4rem,5vw,3.4rem);text-align:center}
+.sec .shead .k{color:var(--blue);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+.sec .shead h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:600;letter-spacing:-.02em;color:var(--navy);margin-top:.3em}
+.sec .shead p{font-size:1.15rem;color:var(--sub);margin-top:.5em;letter-spacing:-.01em}
+/* ---------- IMPACT JOURNEY (steps) ---------- */
+.journey-wrap{max-width:var(--max-wide);margin:0 auto}
+.jsteps{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.jstep{background:#fff;border:1px solid var(--hair);border-radius:18px;padding:22px 18px;position:relative}
+.jstep .num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;font-weight:600;margin-bottom:14px}
+.jstep .jt{font-size:.95rem;font-weight:700;letter-spacing:.02em;color:var(--navy);text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.jstep .jt svg{width:20px;height:20px}
+.jstep ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:7px}
+.jstep li{font-size:.85rem;color:var(--sub);padding-left:14px;position:relative;line-height:1.4}
+.jstep li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.6}
+.c-blue{color:var(--blue)}.bg-blue{background:var(--blue)}
+.c-green{color:var(--green)}.bg-green{background:var(--green)}
+.c-purple{color:#6a5acd}.bg-purple{background:#6a5acd}
+/* ---------- WAYS WE CAN PARTNER ---------- */
+.plist{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:16px 40px}
+.pitem{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--hair)}
+.pitem .ic{flex:none;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#eaf3fb;color:var(--blue)}
+.pitem .ic.g{background:#eef6e4;color:var(--green)}
+.pitem .ic svg{width:22px;height:22px}
+.pitem span{font-size:1.05rem;font-weight:500;color:var(--navy);letter-spacing:-.01em}
+/* ---------- WHY ORGANIZATIONS (checklist) ---------- */
+.sec.why{background:#eef6e4}
+.checklist{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px 34px}
+.citem{display:flex;align-items:flex-start;gap:12px;font-size:1.05rem;color:var(--ink);letter-spacing:-.01em}
+.citem svg{flex:none;width:24px;height:24px;color:var(--green);margin-top:1px}
+.why-cta{text-align:center;margin-top:clamp(2.2rem,4vw,3rem)}
+/* ---------- AUDIENCE FEATURE ROWS ---------- */
+.aud{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.aud+.aud{margin-top:clamp(40px,6vw,80px)}
+.aud.rev .a-media{order:2}
+.a-media img{width:100%;height:100%;max-height:440px;object-fit:cover;border-radius:22px}
+.a-copy .k{color:var(--blue);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+.a-copy h3{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:600;letter-spacing:-.02em;color:var(--navy);margin-top:.3em}
+.a-copy p{color:var(--sub);font-size:1.05rem;margin-top:.6em;line-height:1.6}
+.a-copy .pill{margin-top:1.2em}
+/* ---------- IMPACT OF PARTNERSHIP (cards) ---------- */
+.igrid{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.icard{background:#fff;border:1px solid var(--hair);border-radius:20px;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.icard:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(12,43,78,.28)}
+.icard .m{aspect-ratio:16/10;overflow:hidden}
+.icard .m img{width:100%;height:100%;object-fit:cover}
+.icard .b{padding:26px 24px 30px;text-align:center;position:relative}
+.icard .badge{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;margin:-52px auto 12px;position:relative;z-index:2;border:3px solid #fff}
+.icard .badge svg{width:26px;height:26px}
+.icard h3{font-size:1.3rem;font-weight:600;letter-spacing:-.015em;margin-bottom:.4em}
+.icard p{color:var(--sub);font-size:.98rem;line-height:1.55}
+/* ---------- WHY IT MATTERS (blue band) ---------- */
+.matters{background:linear-gradient(120deg,#0a63c9,#0c4a9e);color:#fff;padding:clamp(64px,8vw,110px) 22px}
+.matters-in{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4vw,56px);align-items:center}
+.matters-img img{width:100%;height:100%;max-height:420px;object-fit:cover;border-radius:22px}
+.matters h2{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:600;letter-spacing:-.02em}
+.mrow{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:1.8em}
+.mcell{text-align:left}
+.mcell svg{width:34px;height:34px;color:#fff;opacity:.95}
+.mcell p{font-size:.92rem;color:rgba(255,255,255,.9);margin-top:.7em;line-height:1.4;padding-top:.7em;border-top:1px solid rgba(255,255,255,.25)}
+.matters .close{margin-top:1.8em;font-size:clamp(1.2rem,2.2vw,1.6rem);font-weight:600;color:var(--green-bright);letter-spacing:-.01em}
+/* ---------- TOGETHER (final CTA) ---------- */
+.together{padding:clamp(64px,8vw,110px) 22px}
+.together-in{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,60px);align-items:center}
+.together h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:600;letter-spacing:-.02em;color:var(--navy);line-height:1.06}
+.together p{color:var(--sub);font-size:1.05rem;margin-top:.9em;line-height:1.6;max-width:52ch}
+.together .lli{margin-top:1.1em;font-size:1.2rem;font-weight:600;color:var(--navy)}
+.together .lli .g{color:var(--green)}.together .lli .b{color:var(--blue)}
+.together .pill{margin-top:1.3em}
+.together-img img{width:100%;height:100%;max-height:520px;object-fit:cover;border-radius:24px}
+/* ---------- FOOTER ---------- */
+footer.ft{background:var(--mist);color:var(--sub);font-size:.8rem;padding:40px 22px 30px}
+.ft-in{max-width:var(--max-wide);margin:0 auto}
+.ft-news{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 40px;padding-bottom:28px;border-bottom:1px solid var(--hair)}
+.ft-news .fn-copy h4{font-size:1rem;color:var(--ink);font-weight:600;letter-spacing:-.01em}
+.ft-news .fn-copy p{font-size:.85rem;color:var(--sub);margin-top:.25em}
+.ft-news form{display:flex;gap:8px;flex-wrap:wrap}
+.ft-news input{font-family:inherit;font-size:.9rem;padding:.6em 1em;border:1px solid var(--hair);border-radius:980px;min-width:min(280px,72vw);background:#fff;color:var(--ink)}
+.ft-news input:focus{outline:none;border-color:var(--blue)}
+.ft-news .pill{font-size:.9rem;padding:.6em 1.2em}
+.ft-top{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;padding-top:32px;padding-bottom:24px;border-bottom:1px solid var(--hair)}
+.ft-col h4{font-size:.8rem;color:var(--ink);font-weight:600;margin-bottom:.9em}
+.ft-col a{display:block;color:var(--sub);margin-bottom:.55em;transition:color .2s}
+.ft-col a:hover{color:var(--blue)}
+.ft-bot{padding-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;color:var(--sub)}
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.09s}.reveal.d2{transition-delay:.18s}.reveal.d3{transition-delay:.27s}
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1000px){
+  .jsteps{grid-template-columns:repeat(3,1fr)}
+  .igrid{grid-template-columns:repeat(2,1fr)}
+  .mrow{grid-template-columns:repeat(3,1fr);gap:22px}
+}
+@media(max-width:820px){
+  .phero-in{grid-template-columns:1fr;align-items:start}
+  .phero-img{order:-1}
+  .phero-img img{height:auto;min-height:0;max-height:380px}
+  .matters-in,.together-in{grid-template-columns:1fr}
+  .aud{grid-template-columns:1fr}
+  .aud.rev .a-media{order:0}
+  .a-media{order:-1}
+}
+@media(max-width:640px){
+  .jsteps{grid-template-columns:1fr 1fr}
+  .plist{grid-template-columns:1fr}
+  .checklist{grid-template-columns:1fr}
+  .igrid{grid-template-columns:1fr;max-width:420px}
+  .mrow{grid-template-columns:1fr 1fr}
+  .nav-links{position:fixed;inset:110px 0 auto;flex-direction:column;background:rgba(9,26,46,.97);backdrop-filter:blur(20px);gap:0;padding:8px 0;transform:translateY(-140%);transition:transform .4s var(--ease);border-bottom:1px solid rgba(255,255,255,.12)}
+  .nav-links.open{transform:none}
+  .nav-links li{width:100%;text-align:center}
+  .nav-links a{display:block;padding:14px;font-size:1rem}
+  .burger{display:flex}
+  .burger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="2 Degrees home">
+      <img src="https://cdn-ileldki.nitrocdn.com/QPdKdDRKSxeStwqUUsMLZMyWhldKdUAl/assets/images/optimized/rev-0dd8287/2degreestravel.com/wp-content/uploads/2024/10/2-Degrees-Travel-Transparent-Logo.png" alt="2 Degrees" />
+    </a>
+    <div class="nav-right">
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#partner">Partnerships</a></li>
+          <li><a href="#together">Get Involved</a></li>
+        </ul>
+      </nav>
+      <a href="#together" class="pill nav-cta">Become a Partner</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<!-- HERO -->
+<section class="phero" id="about">
+  <div class="phero-in">
+    <div class="phero-copy reveal">
+      <h1>Partnerships &amp; Giving Back</h1>
+      <span class="kick">Creating the Shift Through Meaningful Partnerships</span>
+      <p class="lede">Great experiences don't happen because of places.<br>They happen because of people.</p>
+      <div class="body">
+        <p>At 2 Degrees, we believe the most meaningful global experiences are created through authentic partnerships.</p>
+        <p>We bring together schools, Indigenous communities, governments, businesses, nonprofits, social enterprises, cultural organizations, educators, and local changemakers to create experiences that inspire learning, strengthen leadership, and create lasting impact.</p>
+        <p>Whether you're looking to share your expertise, host a visiting delegation, collaborate on a community initiative, or create new opportunities for learning and connection, we'd love to build something meaningful together.</p>
+        <p>Because when passionate people come together with a shared purpose, extraordinary things happen.</p>
+      </div>
+      <p class="lli">Learn. <span class="g">Lead.</span> <span class="b">Impact.</span></p>
+      <div class="phero-cta"><a href="#together" class="pill">Become a Partner</a></div>
+    </div>
+    <div class="phero-img reveal d1">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1500&q=88" alt="Hands joined together in unity" />
+    </div>
+  </div>
+</section>
+<!-- FULL-WIDTH IMAGE + CAPTION -->
+<section class="fullcap reveal">
+  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=2400&q=85')"></div>
+  <div class="cap">
+    <h3>Every partnership begins with trust.</h3>
+    <p>Real relationships — not transactions — are the foundation of every experience we build together.</p>
+  </div>
+</section>
+<!-- OUR IMPACT JOURNEY -->
+<section class="sec" id="impact">
+  <div class="shead reveal">
+    <span class="k">How it works</span>
+    <h2>Our Impact Journey</h2>
+    <p>Every partnership moves through a cycle of connection, learning, and lasting change.</p>
+  </div>
+  <div class="journey-wrap">
+    <div class="jsteps">
+      <div class="jstep reveal">
+        <div class="num bg-blue">1</div>
+        <div class="jt"><svg class="c-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2.5 19a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.3"/><path d="M15 19a5 5 0 0 1 6.5-4.8"/></svg>Connect</div>
+        <ul><li class="c-blue">Meet the right people</li><li class="c-blue">Build trust</li><li class="c-blue">Create relationships</li></ul>
+      </div>
+      <div class="jstep reveal d1">
+        <div class="num bg-green">2</div>
+        <div class="jt"><svg class="c-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-2-1.5-5-1.5-8 0v12c3-1.5 6-1.5 8 0 2-1.5 5-1.5 8 0V6c-3-1.5-6-1.5-8 0z"/><path d="M12 6v12"/></svg>Learn</div>
+        <ul><li class="c-green">Experience new cultures &amp; places</li><li class="c-green">Exchange ideas</li><li class="c-green">Expand perspectives</li></ul>
+      </div>
+      <div class="jstep reveal d2">
+        <div class="num bg-green">3</div>
+        <div class="jt"><svg class="c-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>Lead</div>
+        <ul><li class="c-green">Collaborate</li><li class="c-green">Innovate</li><li class="c-green">Build capacity</li><li class="c-green">Develop leaders</li></ul>
+      </div>
+      <div class="jstep reveal">
+        <div class="num bg-green">4</div>
+        <div class="jt"><svg class="c-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>Impact</div>
+        <ul><li class="c-green">Community projects</li><li class="c-green">Global stewardship</li><li class="c-green">Corporate social responsibility</li><li class="c-green">Sustainable partnerships</li></ul>
+      </div>
+      <div class="jstep reveal d1">
+        <div class="num bg-green">5</div>
+        <div class="jt"><svg class="c-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>Relationships Grow</div>
+        <ul><li class="c-green">New opportunities</li><li class="c-green">Future partnerships</li><li class="c-green">Stronger communities</li></ul>
+      </div>
+      <div class="jstep reveal d2">
+        <div class="num bg-purple">6</div>
+        <div class="jt"><svg class="c-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8a8 8 0 0 0-14-3L3 8"/><path d="M3 3v5h5"/><path d="M4 16a8 8 0 0 0 14 3l3-3"/><path d="M21 21v-5h-5"/></svg>Continue</div>
+        <ul><li class="c-purple">Reinforce connections</li><li class="c-purple">Plan future journeys</li><li class="c-purple">Continue the impact</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- WAYS WE CAN PARTNER -->
+<section class="sec mist" id="partner">
+  <div class="shead reveal">
+    <span class="k">Collaboration</span>
+    <h2>Ways We Can Partner</h2>
+    <p>There are many ways to get involved — every partnership is shaped around your people and goals.</p>
+  </div>
+  <div class="plist">
+    <div class="pitem reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11.5V16c0 1 2.7 3 6 3s6-2 6-3v-4.5"/></svg></span><span>Educational Experiences</span></div>
+    <div class="pitem reveal d1"><span class="ic g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2.5 19a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.3"/><path d="M15 19a5 5 0 0 1 6.5-4.8"/></svg></span><span>Community Partnerships</span></div>
+    <div class="pitem reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg></span><span>Cultural Exchange</span></div>
+    <div class="pitem reveal d1"><span class="ic g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V9"/><path d="M12 9c0-3 2-6 6-6 0 3-2 6-6 6z"/><path d="M12 12c0-2.5-2-5-6-5 0 2.5 2 5 6 5z"/></svg></span><span>Indigenous Knowledge Sharing</span></div>
+    <div class="pitem reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16"/><path d="M15 9h4a1 1 0 0 1 1 1v11"/><path d="M2 21h20"/><path d="M7 8h4M7 12h4M7 16h4"/></svg></span><span>Industry &amp; Business Visits</span></div>
+    <div class="pitem reveal d1"><span class="ic g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.3 4.7 5.2.8-3.75 3.65.9 5.15L12 15l-4.65 2.45.9-5.15L4.5 8.5l5.2-.8z"/></svg></span><span>Leadership Workshops</span></div>
+    <div class="pitem reveal"><span class="ic g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V9"/><path d="M12 9c0-3 2-6 6-6 0 3-2 6-6 6z"/><path d="M12 12c0-2.5-2-5-6-5 0 2.5 2 5 6 5z"/></svg></span><span>Sustainability Initiatives</span></div>
+    <div class="pitem reveal d1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></span><span>Community Service Projects</span></div>
+    <div class="pitem reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3z"/><path d="M6 11a6 6 0 0 0 12 0"/><path d="M12 17v4M8 21h8"/></svg></span><span>Guest Speakers &amp; Industry Experts</span></div>
+    <div class="pitem reveal d1"><span class="ic g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V7l7-4 7 4v14"/><path d="M3 21h18"/><path d="M10 21v-5h4v5"/><path d="M14 8h3v3h-3z"/></svg></span><span>Facility Tours &amp; Behind-the-Scenes</span></div>
+  </div>
+</section>
+<!-- WHY ORGANIZATIONS PARTNER -->
+<section class="sec why">
+  <div class="shead reveal">
+    <span class="k">The value</span>
+    <h2>Why Organizations Partner With 2 Degrees</h2>
+  </div>
+  <div class="checklist">
+    <div class="citem reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5 5-5.5"/></svg><span>Share your story with engaged international visitors</span></div>
+    <div class="citem reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5 5-5.5"/></svg><span>Inspire future leaders through real-world experiences</span></div>
+    <div class="citem reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5 5-5.5"/></svg><span>Build meaningful community connections</span></div>
+    <div class="citem reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5 5-5.5"/></svg><span>Strengthen global relationships</span></div>
+    <div class="citem reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5 5-5.5"/></svg><span>Increase awareness of your organization</span></div>
+    <div class="citem reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5 5-5.5"/></svg><span>Celebrate local culture, innovation, and leadership</span></div>
+    <div class="citem reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5 5-5.5"/></svg><span>Support education through experiential learning</span></div>
+    <div class="citem reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5 5-5.5"/></svg><span>Create lasting impact beyond the program itself</span></div>
+  </div>
+  <div class="why-cta reveal"><a href="#together" class="pill">Become a Partner</a></div>
+</section>
+<!-- WHO WE PARTNER WITH (Schools / Government & Organizations / Non-Profit & Charities) -->
+<section class="sec" id="who">
+  <div class="shead reveal">
+    <span class="k">Who we partner with</span>
+    <h2>Partners in Transformation</h2>
+    <p>From classrooms to real-world global experiences — we work with three kinds of partners.</p>
+  </div>
+  <div class="aud reveal">
+    <div class="a-media"><img loading="lazy" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=85" alt="Students learning together"></div>
+    <div class="a-copy">
+      <span class="k">Schools</span>
+      <h3>Schools &amp; Educators</h3>
+      <p>Give students experiential, real-world learning that expands perspectives and builds leadership. We partner with schools and educators to design immersive programs that connect classrooms to communities around the world.</p>
+      <a href="#together" class="pill">Become a Partner</a>
+    </div>
+  </div>
+  <div class="aud rev reveal">
+    <div class="a-media"><img loading="lazy" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=85" alt="Government and organization leaders collaborating"></div>
+    <div class="a-copy">
+      <span class="k">Government &amp; Organizations</span>
+      <h3>Government &amp; Organizations</h3>
+      <p>Host delegations, share expertise, and build global relationships that create value at home and abroad. We collaborate with governments, businesses, and institutions on exchanges and initiatives with lasting reach.</p>
+      <a href="#together" class="pill">Become a Partner</a>
+    </div>
+  </div>
+  <div class="aud reveal">
+    <div class="a-media"><img loading="lazy" src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1400&q=85" alt="Non-profit and charity community work"></div>
+    <div class="a-copy">
+      <span class="k">Non-Profit &amp; Charities</span>
+      <h3>Non-Profit &amp; Charities</h3>
+      <p>Amplify your mission through meaningful engagement, storytelling, and community service. We help nonprofits and charities connect with engaged visitors and changemakers to extend impact well beyond a single visit.</p>
+      <a href="#together" class="pill">Become a Partner</a>
+    </div>
+  </div>
+</section>
+<!-- FULL-WIDTH IMAGE + CAPTION -->
+<section class="fullcap reveal">
+  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2400&q=85')"></div>
+  <div class="cap">
+    <h3>Impact that reaches beyond the visit.</h3>
+    <p>The relationships we build together keep creating value long after a program ends.</p>
+  </div>
+</section>
+<!-- THE IMPACT OF PARTNERSHIP -->
+<section class="sec mist">
+  <div class="shead reveal">
+    <span class="k">Outcomes</span>
+    <h2>The Impact of Partnership</h2>
+  </div>
+  <div class="igrid">
+    <article class="icard reveal">
+      <div class="m"><img loading="lazy" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1100&q=85" alt="Stronger communities"></div>
+      <div class="b">
+        <div class="badge bg-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2.5 19a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.3"/><path d="M15 19a5 5 0 0 1 6.5-4.8"/></svg></div>
+        <h3 class="c-blue">Stronger Communities</h3>
+        <p>Meaningful partnerships strengthen local communities while celebrating the people and organizations creating positive change.</p>
+      </div>
+    </article>
+    <article class="icard reveal d1">
+      <div class="m"><img loading="lazy" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1100&q=85" alt="Shared learning"></div>
+      <div class="b">
+        <div class="badge bg-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg></div>
+        <h3 class="c-green">Shared Learning</h3>
+        <p>Every interaction becomes an opportunity to exchange ideas, cultures, perspectives, and lived experiences.</p>
+      </div>
+    </article>
+    <article class="icard reveal d2">
+      <div class="m"><img loading="lazy" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1100&q=85" alt="Greater visibility"></div>
+      <div class="b">
+        <div class="badge bg-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l5 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6"/></svg></div>
+        <h3 class="c-blue">Greater Visibility</h3>
+        <p>Purpose-driven organizations gain authentic exposure through meaningful engagement and storytelling.</p>
+      </div>
+    </article>
+    <article class="icard reveal">
+      <div class="m"><img loading="lazy" src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=1100&q=85" alt="Leadership in action"></div>
+      <div class="b">
+        <div class="badge bg-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg></div>
+        <h3 class="c-green">Leadership in Action</h3>
+        <p>Partners become mentors, collaborators, and catalysts for future generations.</p>
+      </div>
+    </article>
+    <article class="icard reveal d1">
+      <div class="m"><img loading="lazy" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1100&q=85" alt="Lasting relationships"></div>
+      <div class="b">
+        <div class="badge bg-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17l-4-4 3-3 2 2 5-5 3 3-8 8a1.4 1.4 0 0 1-2 0z"/><path d="M3 13l3-3"/></svg></div>
+        <h3 class="c-purple">Lasting Relationships</h3>
+        <p>Many partnerships continue long after a program concludes, creating opportunities for future collaboration.</p>
+      </div>
+    </article>
+    <article class="icard reveal d2">
+      <div class="m"><img loading="lazy" src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1100&q=85" alt="Ripple effects"></div>
+      <div class="b">
+        <div class="badge bg-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v4"/><path d="M8.5 13a3.5 3.5 0 0 1 7 0"/><path d="M5 17a7 7 0 0 1 14 0"/><path d="M2 21a10 10 0 0 1 20 0"/></svg></div>
+        <h3 class="c-green">Ripple Effects</h3>
+        <p>One meaningful experience inspires another, creating positive change that extends far beyond a single visit.</p>
+      </div>
+    </article>
+  </div>
+</section>
+<!-- WHY IT MATTERS -->
+<section class="matters">
+  <div class="matters-in">
+    <div class="matters-img reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1300&q=85" alt="People watching a sunset together"></div>
+    <div class="reveal d1">
+      <h2>Why It Matters</h2>
+      <div class="mrow">
+        <div class="mcell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/></svg><p>One conversation sparks an idea.</p></div>
+        <div class="mcell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2.5 19a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.3"/><path d="M15 19a5 5 0 0 1 6.5-4.8"/></svg><p>One introduction creates a partnership.</p></div>
+        <div class="mcell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg><p>One shared experience builds understanding.</p></div>
+        <div class="mcell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="2.5"/><circle cx="16" cy="9" r="2.5"/><path d="M2.5 19a5.5 5.5 0 0 1 11 0"/><path d="M13 19a5.5 5.5 0 0 1 8.5-4.6"/></svg><p>One collaboration strengthens a community.</p></div>
+        <div class="mcell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg><p>One act of generosity inspires a lifetime of possibility.</p></div>
+      </div>
+      <p class="close">That's the power of people coming together with purpose.</p>
+    </div>
+  </div>
+</section>
+<!-- LET'S CREATE THE SHIFT TOGETHER -->
+<section class="together" id="together">
+  <div class="together-in">
+    <div class="reveal">
+      <h2>Let's Create the Shift Together</h2>
+      <p>Whether you're a business, nonprofit, Indigenous community, educator, government organization, social enterprise, or community leader, we'd love to explore how we can work together to create experiences that inspire learning, strengthen communities, and leave a lasting impact.</p>
+      <p>At 2 Degrees, we believe meaningful partnerships have the power to transform not only the people who travel — but also the communities that welcome them.</p>
+      <p class="lli">Learn. <span class="g">Lead.</span> <span class="b">Impact.</span></p>
+      <a href="#" class="pill">Become a Partner</a>
+    </div>
+    <div class="together-img reveal d1">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=85" alt="Group of people smiling together" />
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-news">
+      <div class="fn-copy">
+        <h4>Stories from the field.</h4>
+        <p>Videos, updates, and journeys in the making — straight to your inbox.</p>
+      </div>
+      <form onsubmit="return false">
+        <input type="email" placeholder="Email address" aria-label="Email address" required>
+        <button class="pill" type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="ft-top">
+      <div class="ft-col">
+        <h4>Partner With Us</h4>
+        <a href="#who">Schools &amp; Educators</a>
+        <a href="#who">Government &amp; Organizations</a>
+        <a href="#who">Non-Profit &amp; Charities</a>
+        <a href="#partner">Ways We Can Partner</a>
+      </div>
+      <div class="ft-col">
+        <h4>About</h4>
+        <a href="#about">Our Approach</a>
+        <a href="#impact">Our Impact Journey</a>
+        <a href="#together">Get Involved</a>
+      </div>
+      <div class="ft-col">
+        <h4>Company</h4>
+        <a href="index.html">Home</a>
+        <a href="#together">Contact</a>
+        <a href="#together">Become a Partner</a>
+      </div>
+      <div class="ft-col">
+        <h4>Connect</h4>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span>© 2026 2 Degrees Transformational Travel. All rights reserved.</span>
+      <span>Learn. Lead. Impact.</span>
+    </div>
+  </div>
+</footer>
+<script>
+const nav=document.querySelector('header.nav');
+const onNavScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);
+onNavScroll();
+window.addEventListener('scroll',onNavScroll,{passive:true});
+const burger=document.getElementById('burger');
+const links=document.getElementById('navLinks');
+burger.addEventListener('click',()=>{burger.classList.toggle('open');links.classList.toggle('open')});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');links.classList.remove('open')}));
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
