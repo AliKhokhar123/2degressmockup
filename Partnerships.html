@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>2 Degrees — Partnerships &amp; Giving Back</title>
+<title>2 Degrees — Partnerships</title>
 <meta name="description" content="Partner with 2 Degrees to create educational, cultural, and leadership experiences that inspire learning, strengthen communities, and leave a lasting impact." />
 <style>
 :root{
@@ -114,11 +114,14 @@ header.nav.scrolled .nav-brand img{height:74px}
 /* ---------- ROTATING SHOWCASE (Cantrav style) ---------- */
 .rotate{background:#fff}
 .rotate-in{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;min-height:clamp(480px,52vw,640px)}
-.rot-left{background:var(--navy);color:#fff;padding:clamp(40px,5vw,80px);display:flex;flex-direction:column;justify-content:center}
+.rot-left{background:var(--navy);color:#fff;padding:clamp(40px,5vw,80px);display:flex;flex-direction:column;justify-content:flex-end}
 .rot-left .k{color:var(--green-bright);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
 .rot-left h2{color:#fff;font-size:clamp(2rem,3.6vw,3rem);font-weight:600;letter-spacing:-.02em;margin-top:.3em;line-height:1.05}
 .rot-left p{color:rgba(255,255,255,.82);font-size:1.05rem;line-height:1.6;margin-top:1em;max-width:46ch}
-.rot-left .pill{margin-top:1.6em;align-self:flex-start}
+.rot-left .lli{margin-top:1.3em;font-size:1.15rem;font-weight:600;color:#fff;letter-spacing:-.01em}
+.rot-left .lli .g{color:var(--green-bright)}
+.rot-left .lli .b{color:#7cc0f7}
+.rot-left .pill{margin-top:1.2em;align-self:flex-start}
 .rot-right{position:relative;overflow:hidden;background:#05101f;min-height:360px}
 .rot-right .rimg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .8s var(--ease)}
 .rot-right .rimg.on{opacity:1}
@@ -160,21 +163,19 @@ header.nav.scrolled .nav-brand img{height:74px}
 .together .lli .g{color:var(--green)}.together .lli .b{color:var(--blue)}
 .together .pill{margin-top:1.3em}
 .together-img img{width:100%;height:100%;max-height:520px;object-fit:cover}
-/* ---------- FOOTER ---------- */
-footer.ft{background:var(--mist);color:var(--sub);font-size:.8rem;padding:40px 22px 30px}
+/* ---------- FOOTER (Kim's preferred style, bigger logo) ---------- */
+footer.ft{background:#08203c;color:rgba(255,255,255,.72);padding:52px 22px 30px}
 .ft-in{max-width:var(--max-wide);margin:0 auto}
-.ft-news{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 40px;padding-bottom:28px;border-bottom:1px solid var(--hair)}
-.ft-news .fn-copy h4{font-size:1rem;color:var(--ink);font-weight:600;letter-spacing:-.01em}
-.ft-news .fn-copy p{font-size:.85rem;color:var(--sub);margin-top:.25em}
-.ft-news form{display:flex;gap:8px;flex-wrap:wrap}
-.ft-news input{font-family:inherit;font-size:.9rem;padding:.6em 1em;border:1px solid var(--hair);border-radius:var(--btnr);min-width:min(280px,72vw);background:#fff;color:var(--ink)}
-.ft-news input:focus{outline:none;border-color:var(--blue)}
-.ft-news .pill{font-size:.9rem;padding:.6em 1.2em}
-.ft-top{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;padding-top:32px;padding-bottom:24px;border-bottom:1px solid var(--hair)}
-.ft-col h4{font-size:.8rem;color:var(--ink);font-weight:600;margin-bottom:.9em}
-.ft-col a{display:block;color:var(--sub);margin-bottom:.55em;transition:color .2s}
-.ft-col a:hover{color:var(--blue)}
-.ft-bot{padding-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;color:var(--sub)}
+.ft-top2{display:flex;flex-wrap:wrap;gap:1.6rem 2rem;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:28px;margin-bottom:22px}
+.ft-brand img{height:112px;width:auto}
+.ft-nav{display:flex;flex-wrap:wrap;gap:1.4rem;list-style:none}
+.ft-nav a{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72);transition:color .3s}
+.ft-nav a:hover{color:var(--green-bright)}
+.ft-social{display:flex;gap:.7rem}
+.ft-social a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.28);display:grid;place-items:center;color:#fff;transition:.35s var(--ease)}
+.ft-social a:hover{background:var(--green-bright);border-color:var(--green-bright);color:var(--navy);transform:translateY(-3px)}
+.ft-social svg{width:17px;height:17px}
+.ft-bottom{font-size:.78rem;color:rgba(255,255,255,.5);text-align:center}
 /* ---------- REVEAL ---------- */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 .reveal.in{opacity:1;transform:none}
@@ -238,7 +239,7 @@ footer.ft{background:var(--mist);color:var(--sub);font-size:.8rem;padding:40px 2
   <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=2600&q=88')"></div>
   <div class="phero-in">
     <div class="phero-copy reveal">
-      <h1>Partnerships &amp; Giving Back</h1>
+      <h1>Partnerships</h1>
       <span class="kick">Creating the Shift Through Meaningful Partnerships</span>
       <p class="lede">Great experiences don't happen because of places.<br>They happen because of people.</p>
       <div class="body">
@@ -249,6 +250,38 @@ footer.ft{background:var(--mist);color:var(--sub);font-size:.8rem;padding:40px 2
       </div>
       <p class="lli">Learn. <span class="g">Lead.</span> <span class="b">Impact.</span></p>
       <div class="phero-cta"><a href="#together" class="pill">Become a Partner</a></div>
+    </div>
+  </div>
+</section>
+<!-- WHO WE WORK WITH — rotating showcase -->
+<section class="rotate" id="who">
+  <div class="rotate-in">
+    <div class="rot-left reveal">
+      <span class="k">Who we work with</span>
+      <h2>Partners in transformation.</h2>
+      <p>From classrooms to communities and enterprises, we work with a wide range of partners to create experiences that inspire learning and lasting impact.</p>
+      <p class="lli">Learn. <span class="g">Lead.</span> <span class="b">Impact.</span></p>
+      <a href="#together" class="pill">Become a Partner</a>
+    </div>
+    <div class="rot-right">
+      <div class="rimg on" data-i="0" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1700&q=85')"></div>
+      <div class="rimg" data-i="1" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1700&q=85')"></div>
+      <div class="rimg" data-i="2" style="background-image:url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1700&q=85')"></div>
+      <div class="rimg" data-i="3" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1700&q=85')"></div>
+      <div class="rimg" data-i="4" style="background-image:url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1700&q=85')"></div>
+      <div class="rot-card">
+        <span class="rc-k">Who we work with</span>
+        <h3 id="rcH">Schools</h3>
+        <p id="rcP">Experiential, real-world learning that expands perspectives and builds leadership.</p>
+        <a href="#" class="tcta">Learn More</a>
+      </div>
+      <div class="rot-dots" id="rotDots">
+        <button data-i="0" class="on" aria-label="Schools"></button>
+        <button data-i="1" aria-label="Government"></button>
+        <button data-i="2" aria-label="Cultural Groups"></button>
+        <button data-i="3" aria-label="Social Enterprises"></button>
+        <button data-i="4" aria-label="Non-Profits & NGO's"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -331,33 +364,6 @@ footer.ft{background:var(--mist);color:var(--sub);font-size:.8rem;padding:40px 2
     <div class="citem reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="butt" stroke-linejoin="miter"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5 5-5.5"/></svg><span>Create lasting impact beyond the program itself</span></div>
   </div>
   <div class="why-cta reveal"><a href="#together" class="pill">Become a Partner</a></div>
-</section>
-<!-- WHO WE PARTNER WITH — rotating showcase -->
-<section class="rotate" id="who">
-  <div class="rotate-in">
-    <div class="rot-left reveal">
-      <span class="k">Who we partner with</span>
-      <h2>Partners in transformation.</h2>
-      <p>From classrooms to real-world global experiences, we work with schools, governments, organizations, nonprofits, and charities to create experiences that inspire learning and lasting impact.</p>
-      <a href="#together" class="pill">Become a Partner</a>
-    </div>
-    <div class="rot-right">
-      <div class="rimg on" data-i="0" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1700&q=85')"></div>
-      <div class="rimg" data-i="1" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1700&q=85')"></div>
-      <div class="rimg" data-i="2" style="background-image:url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1700&q=85')"></div>
-      <div class="rot-card">
-        <span class="rc-k" id="rcK">Schools</span>
-        <h3 id="rcH">Schools &amp; Educators</h3>
-        <p id="rcP">Experiential, real-world learning that expands perspectives and builds leadership.</p>
-        <a href="#together" class="tcta">Become a Partner</a>
-      </div>
-      <div class="rot-dots" id="rotDots">
-        <button data-i="0" class="on" aria-label="Schools"></button>
-        <button data-i="1" aria-label="Government & Organizations"></button>
-        <button data-i="2" aria-label="Non-Profit & Charities"></button>
-      </div>
-    </div>
-  </div>
 </section>
 <!-- FULL-WIDTH IMAGE + CAPTION -->
 <section class="fullcap reveal">
@@ -459,47 +465,26 @@ footer.ft{background:var(--mist);color:var(--sub);font-size:.8rem;padding:40px 2
 <!-- FOOTER -->
 <footer class="ft">
   <div class="ft-in">
-    <div class="ft-news">
-      <div class="fn-copy">
-        <h4>Stories from the field.</h4>
-        <p>Videos, updates, and journeys in the making — straight to your inbox.</p>
-      </div>
-      <form onsubmit="return false">
-        <input type="email" placeholder="Email address" aria-label="Email address" required>
-        <button class="pill" type="submit">Subscribe</button>
-      </form>
-    </div>
-    <div class="ft-top">
-      <div class="ft-col">
-        <h4>Partner With Us</h4>
-        <a href="#who">Schools &amp; Educators</a>
-        <a href="#who">Government &amp; Organizations</a>
-        <a href="#who">Non-Profit &amp; Charities</a>
-        <a href="#partner">Ways We Can Partner</a>
-      </div>
-      <div class="ft-col">
-        <h4>About</h4>
-        <a href="#about">Our Approach</a>
-        <a href="#impact">Our Impact Journey</a>
-        <a href="#together">Get Involved</a>
-      </div>
-      <div class="ft-col">
-        <h4>Company</h4>
-        <a href="index.html">Home</a>
-        <a href="#together">Contact</a>
-        <a href="#together">Become a Partner</a>
-      </div>
-      <div class="ft-col">
-        <h4>Connect</h4>
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Facebook</a>
+    <div class="ft-top2">
+      <a href="index.html" class="ft-brand" aria-label="2 Degrees home">
+        <img src="https://cdn-ileldki.nitrocdn.com/QPdKdDRKSxeStwqUUsMLZMyWhldKdUAl/assets/images/optimized/rev-0dd8287/2degreestravel.com/wp-content/uploads/2024/10/2-Degrees-Travel-Transparent-Logo.png" alt="2 Degrees" />
+      </a>
+      <ul class="ft-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="partnerships.html">Partnerships</a></li>
+        <li><a href="index.html#about">Impact</a></li>
+        <li><a href="index.html#themes">Experiences</a></li>
+        <li><a href="index.html#story">About</a></li>
+        <li><a href="index.html#stories">Stories</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="ft-social">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4 0 4.75 2.65 4.75 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95s-2.07 1.4-2.07 2.85V21H9z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.8h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
       </div>
     </div>
-    <div class="ft-bot">
-      <span>© 2026 2 Degrees Transformational Travel. All rights reserved.</span>
-      <span>Learn. Lead. Impact.</span>
-    </div>
+    <div class="ft-bottom">© 2026 2 Degrees Transformational Travel. All Rights Reserved. &nbsp;·&nbsp; Learn. Lead. Impact.</div>
   </div>
 </footer>
 <script>
@@ -516,20 +501,22 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 // ---- rotating showcase ----
 (function(){
   const data=[
-    {k:'Schools',h:'Schools & Educators',p:'Experiential, real-world learning that expands perspectives and builds leadership.'},
-    {k:'Government & Organizations',h:'Government & Organizations',p:'Delegations, exchanges, and initiatives that build global relationships and create value.'},
-    {k:'Non-Profit & Charities',h:'Non-Profit & Charities',p:'Amplify your mission through meaningful engagement, storytelling, and community service.'}
+    {h:'Schools',p:'Experiential, real-world learning that expands perspectives and builds leadership.'},
+    {h:'Government',p:'Delegations, exchanges, and initiatives that build global relationships and create value.'},
+    {h:'Cultural Groups',p:'Celebrate heritage and share traditions through authentic cultural exchange.'},
+    {h:'Social Enterprises',p:'Purpose-driven ventures creating impact through collaboration and shared value.'},
+    {h:"Non-Profits & NGO's",p:'Amplify your mission through meaningful engagement, storytelling, and community service.'}
   ];
   const imgs=[...document.querySelectorAll('.rot-right .rimg')];
   const dots=[...document.querySelectorAll('#rotDots button')];
-  const K=document.getElementById('rcK'),H=document.getElementById('rcH'),P=document.getElementById('rcP');
+  const H=document.getElementById('rcH'),P=document.getElementById('rcP');
   if(!imgs.length) return;
   let i=0,timer;
   function show(n){
     i=n;
     imgs.forEach(el=>el.classList.toggle('on',+el.dataset.i===n));
     dots.forEach(el=>el.classList.toggle('on',+el.dataset.i===n));
-    K.textContent=data[n].k;H.textContent=data[n].h;P.textContent=data[n].p;
+    H.textContent=data[n].h;P.textContent=data[n].p;
   }
   function next(){show((i+1)%data.length)}
   function start(){timer=setInterval(next,5000)}
