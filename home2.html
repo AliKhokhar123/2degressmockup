@@ -33,7 +33,7 @@ a{color:inherit;text-decoration:none}
 .link:hover::after{transform:translateX(3px)}
 .link.wide{gap:.35em}
 /* ---------- PILL BUTTON ---------- */
-.pill{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-size:1rem;font-weight:400;padding:.7em 1.35em;border-radius:980px;letter-spacing:-.01em;border:0;cursor:pointer;font-family:inherit;transition:background .25s var(--ease),transform .25s var(--ease)}
+.pill{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-size:1rem;font-weight:400;padding:.7em 1.35em;border-radius:4px;letter-spacing:-.01em;border:0;cursor:pointer;font-family:inherit;transition:background .25s var(--ease),transform .25s var(--ease)}
 .pill:hover{background:#0a6dbd}
 .pill.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
 .pill.ghost:hover{background:#fff;color:var(--navy);border-color:#fff}
@@ -45,10 +45,12 @@ header.nav.scrolled{background:rgba(9,26,46,.72);backdrop-filter:saturate(160%) 
 .nav-inner{max-width:var(--max-wide);height:100%;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between}
 .nav-brand img{height:104px;width:auto;transition:height .45s var(--ease)}
 header.nav.scrolled .nav-brand img{height:74px}
-.nav-links{display:flex;align-items:center;gap:clamp(1.1rem,2.4vw,2.6rem);list-style:none}
+.nav-right{display:flex;align-items:center;gap:clamp(1rem,2vw,1.9rem)}
+.nav-links{display:flex;align-items:center;gap:clamp(.9rem,1.9vw,1.9rem);list-style:none}
 .nav-links a{font-size:.9rem;font-weight:400;color:#fff;opacity:.88;letter-spacing:-.01em;transition:opacity .2s,color .2s}
 .nav-links a:hover{opacity:1;color:#8fd14f}
 .nav-inq{font-size:.9rem;color:#7cc0f7 !important;opacity:1 !important;font-weight:500 !important}
+.nav-cta{font-size:.9rem;padding:.55em 1.2em}
 .burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:6px}
 .burger span{width:20px;height:1.5px;background:#fff;transition:.3s}
 /* ---------- HERO ---------- */
@@ -71,7 +73,7 @@ header.nav.scrolled .nav-brand img{height:74px}
 .feature.dark .tagline{color:rgba(255,255,255,.82)}
 .feature .flinks{margin-top:1em;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
 .feature-img{margin:40px auto clamp(56px,7vw,96px);max-width:var(--max-wide);width:100%;padding:0 22px}
-.feature-img img{width:100%;height:auto;max-height:600px;object-fit:cover;border-radius:20px}
+.feature-img img{width:100%;height:auto;max-height:600px;object-fit:cover;border-radius:0}
 /* dark hero-style feature with text over image */
 .feature.overlay{position:relative;color:#fff;min-height:520px;display:flex;align-items:center;justify-content:center;background-size:cover;background-position:center}
 .feature.overlay::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,18,34,.68),rgba(6,18,34,.5) 50%,rgba(6,18,34,.66)),radial-gradient(ellipse at center,rgba(6,18,34,.45),transparent 62%)}
@@ -87,7 +89,7 @@ header.nav.scrolled .nav-brand img{height:74px}
 .tiles-head h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:600;letter-spacing:-.02em}
 .tiles-head p{font-size:1.15rem;color:var(--sub);margin-top:.5em;letter-spacing:-.01em}
 .tiles-grid{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.tile{position:relative;border-radius:20px;overflow:hidden;min-height:480px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;text-align:left;padding:0 32px 34px;background-size:cover;background-position:center}
+.tile{position:relative;border-radius:0;overflow:hidden;min-height:480px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;text-align:left;padding:0 32px 34px;background-size:cover;background-position:center}
 .tile::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,18,34,0) 24%,rgba(6,18,34,.28) 56%,rgba(6,18,34,.84) 100%);z-index:0}
 .tile>*{position:relative;z-index:1}
 .tile h3{font-size:clamp(1.8rem,2.8vw,2.4rem);font-weight:600;letter-spacing:-.02em;color:#fff;text-shadow:0 2px 22px rgba(0,0,0,.4)}
@@ -111,7 +113,7 @@ header.nav.scrolled .nav-brand img{height:74px}
 .details h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:600;letter-spacing:-.02em;margin-top:.35em}
 .details .dhead p{font-size:1.15rem;color:var(--sub);margin-top:.5em;letter-spacing:-.01em}
 .dgrid{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.dcard{background:#eaf3fb;border-radius:18px;padding:30px 18px 26px;display:flex;flex-direction:column;align-items:center;gap:14px;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.dcard{background:#eaf3fb;border-radius:0;padding:30px 18px 26px;display:flex;flex-direction:column;align-items:center;gap:14px;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .dcard:hover{transform:translateY(-5px);box-shadow:0 24px 44px -30px rgba(12,43,78,.4)}
 .dcard svg{width:36px;height:36px;color:var(--blue)}
 .dcard span{font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);line-height:1.3}
@@ -121,7 +123,7 @@ header.nav.scrolled .nav-brand img{height:74px}
 .who h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:600;letter-spacing:-.02em}
 .who .head p{font-size:1.15rem;color:var(--sub);margin-top:.5em;letter-spacing:-.01em}
 .who-grid{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.wc{background:var(--mist);border-radius:20px;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.wc{background:var(--mist);border-radius:0;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .wc:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(0,0,0,.28)}
 .wc .m{aspect-ratio:16/11;overflow:hidden}
 .wc .m img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
@@ -149,7 +151,7 @@ footer.ft{background:var(--mist);color:var(--sub);font-size:.8rem;padding:40px 2
 .ft-news .fn-copy h4{font-size:1rem;color:var(--ink);font-weight:600;letter-spacing:-.01em}
 .ft-news .fn-copy p{font-size:.85rem;color:var(--sub);margin-top:.25em}
 .ft-news form{display:flex;gap:8px;flex-wrap:wrap}
-.ft-news input{font-family:inherit;font-size:.9rem;padding:.6em 1em;border:1px solid var(--hair);border-radius:980px;min-width:min(280px,72vw);background:#fff;color:var(--ink)}
+.ft-news input{font-family:inherit;font-size:.9rem;padding:.6em 1em;border:1px solid var(--hair);border-radius:4px;min-width:min(280px,72vw);background:#fff;color:var(--ink)}
 .ft-news input:focus{outline:none;border-color:var(--blue)}
 .ft-news .pill{font-size:.9rem;padding:.6em 1.2em}
 .ft-top{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;padding-top:32px;padding-bottom:24px;border-bottom:1px solid var(--hair)}
@@ -189,17 +191,20 @@ footer.ft{background:var(--mist);color:var(--sub);font-size:.8rem;padding:40px 2
     <a class="nav-brand" href="#top" aria-label="2 Degrees home">
       <img src="https://cdn-ileldki.nitrocdn.com/QPdKdDRKSxeStwqUUsMLZMyWhldKdUAl/assets/images/optimized/rev-0dd8287/2degreestravel.com/wp-content/uploads/2024/10/2-Degrees-Travel-Transparent-Logo.png" alt="2 Degrees" />
     </a>
-    <nav>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#top">Home</a></li>
-        <li><a href="#partnerships">Partnerships</a></li>
-        <li><a href="#about">Impact</a></li>
-        <li><a href="#themes">Experiences</a></li>
-        <li><a href="#story">About</a></li>
-        <li><a href="#stories">Stories</a></li>
-        <li><a href="#contact" class="nav-inq">Inquire</a></li>
-      </ul>
-    </nav>
+    <div class="nav-right">
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#top">Home</a></li>
+          <li><a href="partnerships.html">Partnerships</a></li>
+          <li><a href="#about">Impact</a></li>
+          <li><a href="#themes">Experiences</a></li>
+          <li><a href="#story">About</a></li>
+          <li><a href="#stories">Stories</a></li>
+          <li><a href="#contact" class="nav-inq">Inquire</a></li>
+        </ul>
+      </nav>
+      <a href="partnerships.html" class="pill nav-cta">Become a Partner</a>
+    </div>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -302,35 +307,35 @@ footer.ft{background:var(--mist);color:var(--sub);font-size:.8rem;padding:40px 2
   </div>
   <div class="dgrid">
     <div class="dcard reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 15.5l-8.5-3.2V5.2a1.7 1.7 0 0 0-3.4 0v7.1L1 15.5v2.1l8.6-2.6v3.9l-2.2 1.6v1.4l3.9-1.1 3.9 1.1v-1.4l-2.2-1.6v-3.9l8.5 2.6z"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="butt" stroke-linejoin="miter"><path d="M21.5 15.5l-8.5-3.2V5.2a1.7 1.7 0 0 0-3.4 0v7.1L1 15.5v2.1l8.6-2.6v3.9l-2.2 1.6v1.4l3.9-1.1 3.9 1.1v-1.4l-2.2-1.6v-3.9l8.5 2.6z"/></svg>
       <span>Airfare</span>
     </div>
     <div class="dcard reveal d1">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 14h18"/><path d="M6 10V8.2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V10"/><path d="M13 10V8.2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V10"/><path d="M3 18v2M21 18v2"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="butt" stroke-linejoin="miter"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 14h18"/><path d="M6 10V8.2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V10"/><path d="M13 10V8.2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V10"/><path d="M3 18v2M21 18v2"/></svg>
       <span>Accommodation</span>
     </div>
     <div class="dcard reveal d2">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 11h16"/><circle cx="8" cy="19" r="1.4"/><circle cx="16" cy="19" r="1.4"/><path d="M8 4v3M16 4v3"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="butt" stroke-linejoin="miter"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 11h16"/><circle cx="8" cy="19" r="1.4"/><circle cx="16" cy="19" r="1.4"/><path d="M8 4v3M16 4v3"/></svg>
       <span>Ground Transport</span>
     </div>
     <div class="dcard reveal d3">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="butt" stroke-linejoin="miter"><circle cx="12" cy="8" r="3.4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
       <span>Group Leader</span>
     </div>
     <div class="dcard reveal">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="butt" stroke-linejoin="miter"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg>
       <span>Cultural Exchange</span>
     </div>
     <div class="dcard reveal d1">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2 2 0 0 1 5 6.5h2L8.5 4.5h7L17 6.5h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="butt" stroke-linejoin="miter"><path d="M3 8.5A2 2 0 0 1 5 6.5h2L8.5 4.5h7L17 6.5h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>
       <span>Activities</span>
     </div>
     <div class="dcard reveal d2">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2 2 0 0 0 2 2v9"/><path d="M9 3v6M11 3v6"/><path d="M17.5 3c-1.6 0-2.7 2-2.7 5s1.1 4 2.7 4v9"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="butt" stroke-linejoin="miter"><path d="M7 3v7a2 2 0 0 0 2 2v9"/><path d="M9 3v6M11 3v6"/><path d="M17.5 3c-1.6 0-2.7 2-2.7 5s1.1 4 2.7 4v9"/></svg>
       <span>Meals / Food</span>
     </div>
     <div class="dcard reveal d3">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11.5V16c0 1 2.7 3 6 3s6-2 6-3v-4.5"/><path d="M22 9v5"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="butt" stroke-linejoin="miter"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11.5V16c0 1 2.7 3 6 3s6-2 6-3v-4.5"/><path d="M22 9v5"/></svg>
       <span>Faculty Support</span>
     </div>
   </div>
