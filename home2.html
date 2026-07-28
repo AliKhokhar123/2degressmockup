@@ -144,21 +144,19 @@ header.nav.scrolled .nav-brand img{height:74px}
 .cta h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:600;letter-spacing:-.022em;line-height:1.05}
 .cta p{font-size:clamp(1.1rem,2vw,1.4rem);color:rgba(255,255,255,.85);margin:.7em auto 1.6em;max-width:620px;letter-spacing:-.01em}
 .cta .row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-/* ---------- FOOTER (Apple slim footer) ---------- */
-footer.ft{background:var(--mist);color:var(--sub);font-size:.8rem;padding:40px 22px 30px}
+/* ---------- FOOTER (Kim's preferred style, bigger logo) ---------- */
+footer.ft{background:#08203c;color:rgba(255,255,255,.72);font-size:.8rem;padding:52px 22px 30px}
 .ft-in{max-width:var(--max-wide);margin:0 auto}
-.ft-news{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 40px;padding-bottom:28px;margin-bottom:4px;border-bottom:1px solid var(--hair)}
-.ft-news .fn-copy h4{font-size:1rem;color:var(--ink);font-weight:600;letter-spacing:-.01em}
-.ft-news .fn-copy p{font-size:.85rem;color:var(--sub);margin-top:.25em}
-.ft-news form{display:flex;gap:8px;flex-wrap:wrap}
-.ft-news input{font-family:inherit;font-size:.9rem;padding:.6em 1em;border:1px solid var(--hair);border-radius:4px;min-width:min(280px,72vw);background:#fff;color:var(--ink)}
-.ft-news input:focus{outline:none;border-color:var(--blue)}
-.ft-news .pill{font-size:.9rem;padding:.6em 1.2em}
-.ft-top{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;padding-top:32px;padding-bottom:24px;border-bottom:1px solid var(--hair)}
-.ft-col h4{font-size:.8rem;color:var(--ink);font-weight:600;margin-bottom:.9em}
-.ft-col a{display:block;color:var(--sub);margin-bottom:.55em;transition:color .2s}
-.ft-col a:hover{color:var(--blue)}
-.ft-bot{padding-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;color:var(--sub)}
+.ft-top2{display:flex;flex-wrap:wrap;gap:1.6rem 2rem;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:28px;margin-bottom:22px}
+.ft-brand img{height:112px;width:auto}
+.ft-nav{display:flex;flex-wrap:wrap;gap:1.4rem;list-style:none}
+.ft-nav a{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72);transition:color .3s}
+.ft-nav a:hover{color:#8fd14f}
+.ft-social{display:flex;gap:.7rem}
+.ft-social a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.28);display:grid;place-items:center;color:#fff;transition:.35s var(--ease)}
+.ft-social a:hover{background:#8fd14f;border-color:#8fd14f;color:var(--navy);transform:translateY(-3px)}
+.ft-social svg{width:17px;height:17px}
+.ft-bottom{font-size:.78rem;color:rgba(255,255,255,.5);text-align:center}
 /* ---------- REVEAL ---------- */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 .reveal.in{opacity:1;transform:none}
@@ -392,47 +390,26 @@ footer.ft{background:var(--mist);color:var(--sub);font-size:.8rem;padding:40px 2
 <!-- FOOTER -->
 <footer class="ft">
   <div class="ft-in">
-    <div class="ft-news">
-      <div class="fn-copy">
-        <h4>Stories from the field.</h4>
-        <p>Videos, updates, and journeys in the making — straight to your inbox.</p>
-      </div>
-      <form onsubmit="return false">
-        <input type="email" placeholder="Email address" aria-label="Email address" required>
-        <button class="pill" type="submit">Subscribe</button>
-      </form>
-    </div>
-    <div class="ft-top">
-      <div class="ft-col">
-        <h4>Experiences</h4>
-        <a href="#themes">Custom Groups</a>
-        <a href="#themes">Outdoor Leadership</a>
-        <a href="#themes">Innovation &amp; Industry</a>
-        <a href="#themes">Climate Action</a>
-      </div>
-      <div class="ft-col">
-        <h4>Who We Serve</h4>
-        <a href="#partnerships">Schools</a>
-        <a href="#partnerships">Organizations</a>
-        <a href="#partnerships">Partnerships</a>
-      </div>
-      <div class="ft-col">
-        <h4>Company</h4>
-        <a href="#story">About</a>
-        <a href="#stories">Stories</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="ft-col">
-        <h4>Connect</h4>
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Facebook</a>
+    <div class="ft-top2">
+      <a href="#top" class="ft-brand" aria-label="2 Degrees home">
+        <img src="https://cdn-ileldki.nitrocdn.com/QPdKdDRKSxeStwqUUsMLZMyWhldKdUAl/assets/images/optimized/rev-0dd8287/2degreestravel.com/wp-content/uploads/2024/10/2-Degrees-Travel-Transparent-Logo.png" alt="2 Degrees" />
+      </a>
+      <ul class="ft-nav">
+        <li><a href="#top">Home</a></li>
+        <li><a href="partnerships.html">Partnerships</a></li>
+        <li><a href="#about">Impact</a></li>
+        <li><a href="#themes">Experiences</a></li>
+        <li><a href="#story">About</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="ft-social">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4 0 4.75 2.65 4.75 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95s-2.07 1.4-2.07 2.85V21H9z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.8h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
       </div>
     </div>
-    <div class="ft-bot">
-      <span>© 2026 2 Degrees Transformational Travel. All rights reserved.</span>
-      <span>Learn. Lead. Impact.</span>
-    </div>
+    <div class="ft-bottom">© 2026 2 Degrees Transformational Travel. All Rights Reserved. &nbsp;·&nbsp; Learn. Lead. Impact.</div>
   </div>
 </footer>
 <script>
