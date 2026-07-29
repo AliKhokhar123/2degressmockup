@@ -91,6 +91,7 @@ header.nav.scrolled .nav-brand img{height:74px}
 .tiles-grid{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .tile{position:relative;border-radius:0;overflow:hidden;min-height:480px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;text-align:left;padding:0 32px 34px;background-size:cover;background-position:center}
 .tile::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,18,34,0) 24%,rgba(6,18,34,.28) 56%,rgba(6,18,34,.84) 100%);z-index:0}
+.tile.wide{grid-column:1 / -1;min-height:340px}
 .tile>*{position:relative;z-index:1}
 .tile h3{font-size:clamp(1.8rem,2.8vw,2.4rem);font-weight:600;letter-spacing:-.02em;color:#fff;text-shadow:0 2px 22px rgba(0,0,0,.4)}
 .tile .sub{font-size:1.05rem;font-weight:400;margin-top:.2em;letter-spacing:-.01em;color:rgba(255,255,255,.9);text-shadow:0 1px 16px rgba(0,0,0,.45)}
@@ -260,7 +261,7 @@ footer.ft{background:#08203c;color:rgba(255,255,255,.72);font-size:.8rem;padding
 <section class="tiles" id="themes">
   <div class="tiles-head reveal">
     <h2>Explore the themes.</h2>
-    <p>Four ways we bring learning, leadership, and impact to life.</p>
+    <p>Five ways we bring learning, leadership, and impact to life.</p>
   </div>
   <div class="tiles-grid">
     <article class="tile reveal" style="background-image:linear-gradient(180deg,rgba(6,18,34,.15),rgba(6,18,34,.55)),url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=85')">
@@ -281,6 +282,30 @@ footer.ft{background:#08203c;color:rgba(255,255,255,.72);font-size:.8rem;padding
     <article class="tile reveal d1" style="background-image:linear-gradient(180deg,rgba(6,18,34,.2),rgba(6,18,34,.6)),url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1400&q=85')">
       <h3>Climate Action</h3>
       <p class="sub">Hands-on with the people driving change.</p>
+      <div class="tlinks"><a href="#contact" class="link">Learn more</a></div>
+    </article>
+    <article class="tile wide reveal d2" style="background-image:linear-gradient(180deg,rgba(6,18,34,.2),rgba(6,18,34,.62)),url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=2000&q=85')">
+      <h3>Service Trips</h3>
+      <p class="sub">Hands-on service and immersion that creates lasting impact.</p>
+      <div class="tlinks"><a href="#contact" class="link">Learn more</a></div>
+    </article>
+  </div>
+</section>
+<!-- EXPLORE EXPERIENCES (destinations) -->
+<section class="tiles" id="experiences">
+  <div class="tiles-head reveal">
+    <h2>Explore experiences.</h2>
+    <p>Signature destinations where the learning comes to life.</p>
+  </div>
+  <div class="tiles-grid">
+    <article class="tile reveal" style="background-image:linear-gradient(180deg,rgba(6,18,34,.15),rgba(6,18,34,.55)),url('https://images.unsplash.com/photo-1609825488888-3a766db05542?auto=format&fit=crop&w=1400&q=85')">
+      <h3>Canada</h3>
+      <p class="sub">Mountains, ocean, and city as the classroom — from Vancouver to the wild.</p>
+      <div class="tlinks"><a href="#contact" class="link">Learn more</a></div>
+    </article>
+    <article class="tile reveal d1" style="background-image:linear-gradient(180deg,rgba(6,18,34,.15),rgba(6,18,34,.55)),url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1400&q=85')">
+      <h3>Philippines</h3>
+      <p class="sub">Service and cultural immersion that creates lasting impact.</p>
       <div class="tlinks"><a href="#contact" class="link">Learn more</a></div>
     </article>
   </div>
