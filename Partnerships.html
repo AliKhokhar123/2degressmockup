@@ -85,6 +85,12 @@ header.nav.scrolled .nav-brand img{height:74px}
 .sec .shead .k{color:var(--blue);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
 .sec .shead h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:600;letter-spacing:-.02em;color:var(--navy);margin-top:.3em}
 .sec .shead p{font-size:1.15rem;color:var(--sub);margin-top:.5em;letter-spacing:-.01em}
+.leadtext{max-width:760px;margin:0 auto;text-align:center}
+.leadtext p{font-size:1.1rem;line-height:1.7;color:var(--ink);margin-top:1.1em}
+.leadtext p:first-child{margin-top:0}
+.leadtext .lli{margin-top:1.4em;font-size:1.2rem;font-weight:600;color:var(--navy);letter-spacing:-.01em}
+.leadtext .lli .g{color:var(--green)}.leadtext .lli .b{color:var(--blue)}
+.leadtext .cta-row{margin-top:1.6em}
 /* ---------- IMPACT JOURNEY (steps) ---------- */
 .journey-wrap{max-width:var(--max-wide);margin:0 auto}
 .jsteps{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
@@ -241,13 +247,6 @@ footer.ft{background:#08203c;color:rgba(255,255,255,.72);padding:52px 22px 30px}
     <div class="phero-copy reveal">
       <h1>Partnerships</h1>
       <span class="kick">Creating the Shift Through Meaningful Partnerships</span>
-      <p class="lede">Great experiences don't happen because of places.<br>They happen because of people.</p>
-      <div class="body">
-        <p>At 2 Degrees, we believe the most meaningful global experiences are created through authentic partnerships.</p>
-        <p>We bring together schools, Indigenous communities, governments, businesses, nonprofits, social enterprises, cultural organizations, educators, and local changemakers to create experiences that inspire learning, strengthen leadership, and create lasting impact.</p>
-        <p>Whether you're looking to share your expertise, host a visiting delegation, collaborate on a community initiative, or create new opportunities for learning and connection, we'd love to build something meaningful together.</p>
-        <p>Because when passionate people come together with a shared purpose, extraordinary things happen.</p>
-      </div>
       <p class="lli">Learn. <span class="g">Lead.</span> <span class="b">Impact.</span></p>
       <div class="phero-cta">
         <a href="#who" class="pill">For Schools</a>
@@ -289,8 +288,22 @@ footer.ft{background:#08203c;color:rgba(255,255,255,.72);padding:52px 22px 30px}
     </div>
   </div>
 </section>
+<!-- INTRO / APPROACH (moved from hero, white background) -->
+<section class="sec" id="approach">
+  <div class="shead reveal">
+    <h2>Great experiences don't happen because of places. They happen because of people.</h2>
+  </div>
+  <div class="leadtext reveal">
+    <p>At 2 Degrees, we believe the most meaningful global experiences are created through authentic partnerships.</p>
+    <p>We bring together schools, Indigenous communities, governments, businesses, nonprofits, social enterprises, cultural organizations, educators, and local changemakers to create experiences that inspire learning, strengthen leadership, and create lasting impact.</p>
+    <p>Whether you're looking to share your expertise, host a visiting delegation, collaborate on a community initiative, or create new opportunities for learning and connection, we'd love to build something meaningful together.</p>
+    <p>Because when passionate people come together with a shared purpose, extraordinary things happen.</p>
+    <p class="lli">Learn. <span class="g">Lead.</span> <span class="b">Impact.</span></p>
+    <div class="cta-row"><a href="#together" class="pill">Become a Partner</a></div>
+  </div>
+</section>
 <!-- OUR IMPACT JOURNEY -->
-<section class="sec" id="impact">
+<section class="sec mist" id="impact">
   <div class="shead reveal">
     <span class="k">How it works</span>
     <h2>Our Impact Journey</h2>
@@ -332,7 +345,7 @@ footer.ft{background:#08203c;color:rgba(255,255,255,.72);padding:52px 22px 30px}
   </div>
 </section>
 <!-- WAYS WE CAN PARTNER -->
-<section class="sec mist" id="partner">
+<section class="sec" id="partner">
   <div class="shead reveal">
     <span class="k">Collaboration</span>
     <h2>Ways We Can Partner</h2>
