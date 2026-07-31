@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2 Degrees — About Us</title>
+<meta name="description" content="2 Degrees Travel has delivered global experiences, travel planning, and business event services for international clients since the 1990s — customized, purpose-driven travel that makes long-term impact." />
+<style>
+:root{
+  --ink:#1d1d1f;--sub:#6e6e73;--hair:#d2d2d7;--paper:#ffffff;--mist:#f5f5f7;
+  --navy:#0c2b4e;--blue:#1a7fd4;--green:#6faa2a;--green-bright:#8fd14f;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  --ease:cubic-bezier(.28,.11,.32,1);--max:1000px;--max-wide:1240px;--btnr:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:110px}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.pill{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-size:1rem;font-weight:500;padding:.72em 1.5em;border-radius:var(--btnr);letter-spacing:-.01em;border:0;cursor:pointer;font-family:inherit;transition:background .25s var(--ease)}
+.pill:hover{background:#0a6dbd}
+.pill.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+.pill.ghost:hover{background:#fff;color:var(--navy);border-color:#fff}
+/* nav */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:110px;background:transparent;border-bottom:1px solid transparent;transition:background .45s var(--ease),border-color .45s var(--ease),height .45s var(--ease)}
+header.nav.scrolled{background:rgba(9,26,46,.72);backdrop-filter:saturate(160%) blur(20px);-webkit-backdrop-filter:saturate(160%) blur(20px);border-bottom:1px solid rgba(255,255,255,.12);height:88px}
+.nav-inner{max-width:var(--max-wide);height:100%;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand img{height:104px;width:auto;transition:height .45s var(--ease)}
+header.nav.scrolled .nav-brand img{height:74px}
+.nav-right{display:flex;align-items:center;gap:clamp(1rem,2vw,1.9rem)}
+.nav-links{display:flex;align-items:center;gap:clamp(.9rem,1.9vw,1.9rem);list-style:none}
+.nav-links a{font-size:.9rem;font-weight:400;color:#fff;opacity:.88;letter-spacing:-.01em;transition:opacity .2s,color .2s}
+.nav-links a:hover{opacity:1;color:var(--green-bright)}
+.nav-inq{font-size:.9rem;color:#7cc0f7 !important;opacity:1 !important;font-weight:500 !important}
+.nav-cta{font-size:.9rem;padding:.55em 1.2em}
+.burger{display:none;flex-direction:column;gap:4px;background:none;border:0;cursor:pointer;padding:6px}
+.burger span{width:20px;height:1.5px;background:#fff;transition:.3s}
+/* hero */
+.phero{position:relative;overflow:hidden;color:#fff;background:#081a30;min-height:76vh;display:flex;align-items:center;padding:calc(110px + clamp(30px,5vw,60px)) 22px clamp(60px,8vw,110px)}
+.phero .bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.phero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(6,18,34,.92) 0%,rgba(6,18,34,.75) 46%,rgba(6,18,34,.4) 74%,rgba(6,18,34,.12) 100%),linear-gradient(180deg,transparent 55%,rgba(6,18,34,.5) 100%)}
+.phero-in{position:relative;z-index:2;max-width:var(--max-wide);margin:0 auto;width:100%}
+.phero-copy{max-width:760px}
+.phero .kick{display:block;font-size:clamp(1.1rem,2vw,1.5rem);font-weight:600;color:var(--green-bright);letter-spacing:-.01em}
+.phero h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:600;letter-spacing:-.028em;line-height:1.03;color:#fff;margin-top:.2em;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.phero .lede{margin-top:1em;font-size:clamp(1.1rem,1.9vw,1.35rem);color:rgba(255,255,255,.9);max-width:52ch;line-height:1.5}
+.phero .lli{margin-top:.9em;font-size:1.25rem;font-weight:600;color:#fff}
+.phero .lli .g{color:var(--green-bright)}.phero .lli .b{color:#7cc0f7}
+/* sections */
+.sec{padding:clamp(64px,8vw,110px) 22px}
+.sec.mist{background:var(--mist)}
+.sec.navy{background:var(--navy);color:#fff}
+.shead{max-width:var(--max);margin:0 auto clamp(2.2rem,4vw,3.2rem);text-align:center}
+.shead .k{color:var(--blue);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+.sec.navy .shead .k{color:var(--green-bright)}
+.shead h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:600;letter-spacing:-.02em;color:var(--navy);margin-top:.3em}
+.sec.navy .shead h2{color:#fff}
+.shead p{font-size:1.15rem;color:var(--sub);margin-top:.5em;letter-spacing:-.01em}
+.sec.navy .shead p{color:rgba(255,255,255,.75)}
+.prose{max-width:760px;margin:0 auto;text-align:center}
+.prose p{font-size:1.12rem;line-height:1.7;color:var(--ink);margin-top:1.1em}
+.prose p:first-child{margin-top:0}
+.sec.navy .prose p{color:rgba(255,255,255,.86)}
+.prose .accent{font-size:clamp(1.35rem,2.6vw,1.9rem);font-weight:600;letter-spacing:-.02em;line-height:1.25;color:var(--green-bright);margin-top:1.3em}
+/* learn lead impact 3 columns */
+.lli3{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.llcol{background:#fff;border:1px solid var(--hair);padding:clamp(28px,3vw,38px) clamp(24px,2.6vw,32px)}
+.llcol .lbl{font-size:1.7rem;font-weight:700;letter-spacing:.02em;color:var(--blue)}
+.llcol:nth-child(2) .lbl{color:var(--green)}
+.llcol:nth-child(3) .lbl{color:var(--navy)}
+.llcol h3{font-size:1.15rem;font-weight:600;color:var(--navy);margin:.15em 0 .7em}
+.llcol p{color:var(--sub);font-size:1rem;line-height:1.6}
+.llcol ul{list-style:none;margin-top:1.2em;display:flex;flex-direction:column;gap:.55em}
+.llcol li{font-size:.98rem;color:var(--navy);font-weight:500;padding-left:18px;position:relative}
+.llcol li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:1px;background:var(--blue)}
+.llcol:nth-child(2) li::before{background:var(--green)}
+.llcol:nth-child(3) li::before{background:var(--navy)}
+/* team */
+.team-grid{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tcard{background:#fff;border:1px solid var(--hair);overflow:hidden;display:flex;flex-direction:column}
+.tphoto{aspect-ratio:1/1;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.tphoto img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.tcard.c1 .tphoto{background:#8cc63f}
+.tcard.c2 .tphoto{background:#1a9bd7}
+.tcard.c3 .tphoto{background:#3f7fd0}
+.tbody{padding:26px 26px 30px}
+.tbody h3{font-size:1.4rem;font-weight:600;color:var(--navy);letter-spacing:-.01em}
+.tbody .role{color:var(--green);font-weight:600;font-size:.95rem;margin:.2em 0 1em}
+.tbody p{color:var(--sub);font-size:.96rem;line-height:1.6;margin-top:.85em}
+.tbody p:first-of-type{margin-top:0}
+.tbody .more{display:none}
+.tbody.open .more{display:block}
+.tmore{margin-top:1.1em;color:var(--green);font-weight:600;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;background:none;border:0;font-family:inherit;padding:0}
+.tmore:hover{color:var(--navy)}
+/* final CTA */
+.cta{position:relative;text-align:center;color:#fff;overflow:hidden;padding:clamp(90px,12vw,150px) 22px;background:#081a30}
+.cta .bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.cta::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,18,34,.7),rgba(6,18,34,.86))}
+.cta .c{position:relative;z-index:2;max-width:var(--max);margin:0 auto}
+.cta h2{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;letter-spacing:-.022em;line-height:1.05}
+.cta p{font-size:clamp(1.1rem,2vw,1.3rem);color:rgba(255,255,255,.88);margin:.8em auto 0;max-width:620px}
+.cta .lli{margin-top:1em;font-size:1.2rem;font-weight:600;color:#fff}
+.cta .lli .g{color:var(--green-bright)}.cta .lli .b{color:#7cc0f7}
+.cta .pill{margin-top:1.6em}
+/* footer */
+footer.ft{background:#08203c;color:rgba(255,255,255,.72);font-size:.8rem;padding:52px 22px 30px}
+.ft-in{max-width:var(--max-wide);margin:0 auto}
+.ft-top2{display:flex;flex-wrap:wrap;gap:1.6rem 2rem;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:28px;margin-bottom:22px}
+.ft-brand img{height:112px;width:auto}
+.ft-nav{display:flex;flex-wrap:wrap;gap:1.4rem;list-style:none}
+.ft-nav a{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72);transition:color .3s}
+.ft-nav a:hover{color:var(--green-bright)}
+.ft-social{display:flex;gap:.7rem}
+.ft-social a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.28);display:grid;place-items:center;color:#fff;transition:.35s var(--ease)}
+.ft-social a:hover{background:var(--green-bright);border-color:var(--green-bright);color:var(--navy);transform:translateY(-3px)}
+.ft-social svg{width:17px;height:17px}
+.ft-bottom{font-size:.78rem;color:rgba(255,255,255,.5);text-align:center}
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.09s}.reveal.d2{transition-delay:.18s}
+/* responsive */
+@media(max-width:960px){.lli3,.team-grid{grid-template-columns:1fr;max-width:520px}}
+@media(max-width:640px){
+  .nav-links{position:fixed;inset:110px 0 auto;flex-direction:column;background:rgba(9,26,46,.97);backdrop-filter:blur(20px);gap:0;padding:8px 0;transform:translateY(-140%);transition:transform .4s var(--ease);border-bottom:1px solid rgba(255,255,255,.12)}
+  .nav-links.open{transform:none}
+  .nav-links li{width:100%;text-align:center}
+  .nav-links a{display:block;padding:14px;font-size:1rem}
+  .burger{display:flex}
+  .burger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html" aria-label="2 Degrees home">
+      <img src="https://cdn-ileldki.nitrocdn.com/QPdKdDRKSxeStwqUUsMLZMyWhldKdUAl/assets/images/optimized/rev-0dd8287/2degreestravel.com/wp-content/uploads/2024/10/2-Degrees-Travel-Transparent-Logo.png" alt="2 Degrees" />
+    </a>
+    <div class="nav-right">
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="partnerships.html">Partnerships</a></li>
+          <li><a href="index.html#about">Impact</a></li>
+          <li><a href="index.html#themes">Experiences</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#stories">Stories</a></li>
+          <li><a href="index.html#contact" class="nav-inq">Inquire</a></li>
+        </ul>
+      </nav>
+      <a href="partnerships.html#together" class="pill nav-cta">Become a Partner</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<!-- HERO -->
+<section class="phero" id="top">
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=2400&q=85')"></div>
+  <div class="phero-in">
+    <div class="phero-copy reveal">
+      <span class="kick">About 2 Degrees</span>
+      <h1>We travel differently.</h1>
+      <p class="lede">Delivering global experiences, travel planning, and business event services for international clients since the 1990s.</p>
+      <p class="lli">Learn. <span class="g">Lead.</span> <span class="b">Impact.</span></p>
+    </div>
+  </div>
+</section>
+<!-- INTRO -->
+<section class="sec">
+  <div class="prose reveal">
+    <p>2 Degrees Travel has been delivering global experiences, travel planning, and business event services for international clients since the 1990s. With strong local partnerships, international relationships, and group safety protocols, 2 Degrees Travel creates customized, purpose-driven travel experiences that make long-term impact.</p>
+  </div>
+</section>
+<!-- TRAVEL DIFFERENTLY -->
+<section class="sec navy">
+  <div class="shead reveal">
+    <span class="k">Our philosophy</span>
+    <h2>Travel Differently</h2>
+  </div>
+  <div class="prose reveal">
+    <p>At 2 Degrees, we don't just plan travel — we create opportunities to learn, lead, and make a difference. By bringing together schools, governments, organizations, cultural groups, and business partners, we create immersive experiences that inspire curiosity, strengthen relationships, and leave a lasting legacy.</p>
+    <p class="accent">Because one experience has the power to change a perspective, and one perspective has the power to change the world.</p>
+  </div>
+</section>
+<!-- LEARN LEAD IMPACT -->
+<section class="sec mist" id="lli">
+  <div class="shead reveal">
+    <span class="k">What guides us</span>
+    <h2>Learn. Lead. Impact.</h2>
+    <p>Three simple words guide every experience we create.</p>
+  </div>
+  <div class="lli3">
+    <div class="llcol reveal">
+      <div class="lbl">Learn</div>
+      <h3>Expand Perspectives</h3>
+      <p>Through educational travel, cultural immersion, and global citizenship experiences, participants gain a deeper understanding of the world — and their place within it.</p>
+      <ul>
+        <li>Educational Travel</li>
+        <li>Cultural Exchange</li>
+        <li>Global Citizenship</li>
+        <li>Sustainability Programs</li>
+        <li>Faculty-Led Programs</li>
+        <li>Industry Immersion</li>
+        <li>Innovation Exposure</li>
+      </ul>
+    </div>
+    <div class="llcol reveal d1">
+      <div class="lbl">Lead</div>
+      <h3>Build Confident Leaders</h3>
+      <p>Leadership is developed through experience. Our programs challenge participants to think critically, communicate across cultures, collaborate with purpose, and lead with confidence wherever life takes them.</p>
+      <ul>
+        <li>Student Leadership</li>
+        <li>International Delegations</li>
+        <li>Leadership Development</li>
+        <li>Strategic Partnerships</li>
+      </ul>
+    </div>
+    <div class="llcol reveal d2">
+      <div class="lbl">Impact</div>
+      <h3>Create Meaningful Change</h3>
+      <p>The most powerful experiences don't end when the journey does. We partner with schools, governments, cultural groups, businesses, and non-profit organizations to create opportunities that strengthen communities and create lasting social, cultural, and environmental impact.</p>
+      <ul>
+        <li>Community Partnerships</li>
+        <li>Community Development</li>
+        <li>Giving Back Initiatives</li>
+        <li>Sustainability Projects</li>
+        <li>Global Collaboration</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- MEET THE TEAM -->
+<section class="sec" id="team">
+  <div class="shead reveal">
+    <span class="k">Our people</span>
+    <h2>Meet the team</h2>
+  </div>
+  <div class="team-grid">
+    <article class="tcard c1 reveal">
+      <div class="tphoto"><img loading="lazy" src="https://cdn-ileldki.nitrocdn.com/QPdKdDRKSxeStwqUUsMLZMyWhldKdUAl/assets/images/optimized/rev-0dd8287/2degreestravel.com/wp-content/uploads/2026/04/2-1-optimized.webp" alt="Kim Carvajal"></div>
+      <div class="tbody">
+        <h3>Kim Carvajal</h3>
+        <div class="role">Founder &amp; Managing Director</div>
+        <p>Kim Carvajal is the visionary behind 2 Degrees Travel and the driving force behind our mission to create transformational, real-world learning experiences. As Founder and Managing Director, Kim leads with purpose, shaping the company's direction, values, and growing global impact.</p>
+        <div class="more">
+          <p>With a background in international business management, she blends strategic leadership with hands-on program design to empower young changemakers. Kim believes deeply in the transformational power of travel — creating opportunities that spark curiosity, build leadership, and inspire who students become along the way.</p>
+          <p>Beyond her work, Kim is a proud mom and an avid adventurer, always exploring new destinations or hiking in her local mountains.</p>
+        </div>
+        <button class="tmore" type="button">Read More</button>
+      </div>
+    </article>
+    <article class="tcard c2 reveal d1">
+      <div class="tphoto"><img loading="lazy" src="https://cdn-ileldki.nitrocdn.com/QPdKdDRKSxeStwqUUsMLZMyWhldKdUAl/assets/images/optimized/rev-0dd8287/2degreestravel.com/wp-content/uploads/2026/04/1.webp" alt="Laurie-Ann Tao"></div>
+      <div class="tbody">
+        <h3>Laurie-Ann Tao</h3>
+        <div class="role">Program Manager</div>
+        <p>Laurie-Ann Tao is a passionate educator and advocate for inclusive, community-centred learning. As Program Manager at 2 Degrees Travel, she brings experience from Ontario and BC's public, private, and alternative education systems, supporting youth from diverse and vulnerable backgrounds.</p>
+        <div class="more">
+          <p>Her approach combines academic insight with heart-centred leadership. Through experiential and outdoor education, she uses nature to foster self-discovery, resilience, and growth. With a background in education, the arts, and ongoing counselling studies, she supports youth with both creativity and care.</p>
+          <p>Outside of her work, Laurie-Ann leads rock climbing adventures in Squamish, practises yoga, gardens, and actively supports her community.</p>
+        </div>
+        <button class="tmore" type="button">Read More</button>
+      </div>
+    </article>
+    <article class="tcard c3 reveal d2">
+      <div class="tphoto"><img loading="lazy" src="https://cdn-ileldki.nitrocdn.com/QPdKdDRKSxeStwqUUsMLZMyWhldKdUAl/assets/images/optimized/rev-0dd8287/2degreestravel.com/wp-content/uploads/2026/04/3.webp" alt="Ella Stewart"></div>
+      <div class="tbody">
+        <h3>Ella Stewart</h3>
+        <div class="role">Marketing &amp; Communications Coordinator</div>
+        <p>Ella Stewart is the creative force behind how 2 Degrees Travel connects with the world. As Marketing &amp; Communications Coordinator, she shapes every message and story, ensuring the mission reaches students, families, educators, and global partners with clarity and heart.</p>
+        <div class="more">
+          <p>A passionate storyteller, Ella blends creativity with strategy through engaging content, outreach, and digital experiences. With a strong communications background, she brings a sharp eye for detail, collaboration, and a commitment to meaningful storytelling.</p>
+          <p>Outside of work, Ella enjoys hiking, camping, exploring new places, and spending time with her two beloved dogs.</p>
+        </div>
+        <button class="tmore" type="button">Read More</button>
+      </div>
+    </article>
+  </div>
+</section>
+<!-- FINAL CTA -->
+<section class="cta" id="contact">
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2200&q=85')"></div>
+  <div class="c reveal">
+    <h2>Ready to create the shift?</h2>
+    <p>Let's design your next transformational experience — for a school, an organization, or a community.</p>
+    <p class="lli">Learn. <span class="g">Lead.</span> <span class="b">Impact.</span></p>
+    <a href="#" class="pill">Get in touch</a>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-top2">
+      <a href="index.html" class="ft-brand" aria-label="2 Degrees home">
+        <img src="https://cdn-ileldki.nitrocdn.com/QPdKdDRKSxeStwqUUsMLZMyWhldKdUAl/assets/images/optimized/rev-0dd8287/2degreestravel.com/wp-content/uploads/2024/10/2-Degrees-Travel-Transparent-Logo.png" alt="2 Degrees" />
+      </a>
+      <ul class="ft-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="partnerships.html">Partnerships</a></li>
+        <li><a href="index.html#about">Impact</a></li>
+        <li><a href="index.html#themes">Experiences</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#stories">Stories</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="ft-social">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4 0 4.75 2.65 4.75 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95s-2.07 1.4-2.07 2.85V21H9z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6v1.8h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+      </div>
+    </div>
+    <div class="ft-bottom">© 2026 2 Degrees Transformational Travel. All Rights Reserved. &nbsp;·&nbsp; Learn. Lead. Impact.</div>
+  </div>
+</footer>
+<script>
+const nav=document.querySelector('header.nav');
+const onNavScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);
+onNavScroll();window.addEventListener('scroll',onNavScroll,{passive:true});
+const burger=document.getElementById('burger');
+const links=document.getElementById('navLinks');
+burger.addEventListener('click',()=>{burger.classList.toggle('open');links.classList.toggle('open')});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');links.classList.remove('open')}));
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// team read more / less
+document.querySelectorAll('.tmore').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const body=btn.closest('.tbody');
+    const open=body.classList.toggle('open');
+    btn.textContent=open?'Read Less':'Read More';
+  });
+});
+</script>
+</body>
+</html>
