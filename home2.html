@@ -126,9 +126,15 @@ header.nav.scrolled .nav-brand img{height:74px}
 .who-grid{max-width:var(--max-wide);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .wc{background:var(--mist);border-radius:0;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .wc:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(0,0,0,.28)}
-.wc .m{aspect-ratio:16/11;overflow:hidden}
+.wc .m{position:relative;aspect-ratio:16/11;overflow:hidden;background:#0c2b4e}
 .wc .m img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
 .wc:hover .m img{transform:scale(1.06)}
+.wc .cslide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .9s var(--ease)}
+.wc .cslide.on{opacity:1}
+.wc .ccap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:30px 18px 15px;background:linear-gradient(180deg,transparent,rgba(6,18,34,.82));color:#fff;font-weight:600;font-size:1.05rem;letter-spacing:-.01em}
+.wc .cdots{position:absolute;top:12px;right:12px;z-index:3;display:flex;gap:5px}
+.wc .cdots i{width:6px;height:6px;background:rgba(255,255,255,.5)}
+.wc .cdots i.on{background:#fff}
 .wc .b{padding:26px 26px 30px;text-align:center}
 .wc h3{font-size:1.4rem;font-weight:600;letter-spacing:-.015em}
 .wc p{color:var(--sub);font-size:.98rem;margin:.5em 0 1em}
@@ -242,18 +248,18 @@ footer.ft{background:#08203c;color:rgba(255,255,255,.72);font-size:.8rem;padding
   <div class="mgrid">
     <div class="mitem reveal">
       <div class="sym">2°</div>
-      <h3>Two degrees of separation</h3>
+      <h3>Two Degrees of Separation</h3>
       <p>You're never as far from the experience or partnership you seek as you think. We connect the dots.</p>
     </div>
     <div class="mitem reveal d1">
       <div class="sym">2°</div>
-      <h3>A two-degree shift</h3>
-      <p>A small change in direction leads somewhere entirely new. That's how life-changing moments happen.</p>
+      <h3>A Two-Degree Shift in Direction</h3>
+      <p>A tiny adjustment in course can lead to an entirely different destination. One experience. One conversation. One connection. One perspective. That's how life-changing moments happen.</p>
     </div>
     <div class="mitem reveal d2">
       <div class="sym">2°</div>
-      <h3>Two degrees of climate</h3>
-      <p>Just two degrees can decide the future of our planet. Small shifts create lasting change.</p>
+      <h3>Two Degrees of Climate Change</h3>
+      <p>Scientists tell us that just two degrees can determine the future of our planet. Small shifts create extraordinary impact.</p>
     </div>
   </div>
 </section>
@@ -274,6 +280,11 @@ footer.ft{background:#08203c;color:rgba(255,255,255,.72);font-size:.8rem;padding
       <p class="sub">Resilience and confidence, built in the wild.</p>
       <div class="tlinks"><a href="#contact" class="link">Learn more</a></div>
     </article>
+    <article class="tile wide reveal" style="background-image:linear-gradient(180deg,rgba(6,18,34,.2),rgba(6,18,34,.62)),url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=2000&q=85')">
+      <h3>Service Trips</h3>
+      <p class="sub">Hands-on service and immersion that creates lasting impact.</p>
+      <div class="tlinks"><a href="#contact" class="link">Learn more</a></div>
+    </article>
     <article class="tile reveal" style="background-image:linear-gradient(180deg,rgba(6,18,34,.15),rgba(6,18,34,.55)),url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1400&q=85')">
       <h3>Innovation &amp; Industry</h3>
       <p class="sub">Meet the leaders shaping the world's most dynamic industries.</p>
@@ -282,11 +293,6 @@ footer.ft{background:#08203c;color:rgba(255,255,255,.72);font-size:.8rem;padding
     <article class="tile reveal d1" style="background-image:linear-gradient(180deg,rgba(6,18,34,.2),rgba(6,18,34,.6)),url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1400&q=85')">
       <h3>Climate Action</h3>
       <p class="sub">Hands-on with the people driving change.</p>
-      <div class="tlinks"><a href="#contact" class="link">Learn more</a></div>
-    </article>
-    <article class="tile wide reveal d2" style="background-image:linear-gradient(180deg,rgba(6,18,34,.2),rgba(6,18,34,.62)),url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=2000&q=85')">
-      <h3>Service Trips</h3>
-      <p class="sub">Hands-on service and immersion that creates lasting impact.</p>
       <div class="tlinks"><a href="#contact" class="link">Learn more</a></div>
     </article>
   </div>
@@ -371,27 +377,45 @@ footer.ft{background:#08203c;color:rgba(255,255,255,.72);font-size:.8rem;padding
   </div>
   <div class="who-grid">
     <article class="wc reveal">
-      <div class="m"><img loading="lazy" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1100&q=85" alt="Schools"></div>
+      <div class="m">
+        <div class="cslide on" data-cap="Culture Exchanges" style="background-image:url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="cslide" data-cap="Be a Host School" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="cslide" data-cap="Hassle-Free Logistics Planning" style="background-image:url('https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="cslide" data-cap="Risk Mitigation Certified" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="cslide" data-cap="Community Leaders" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="cslide" data-cap="Unique Business Visits" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="cslide" data-cap="Meet Civic Leaders" style="background-image:url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="ccap">Culture Exchanges</div>
+      </div>
       <div class="b">
         <h3>Schools</h3>
         <p>Experiential learning that makes students real-world ready.</p>
-        <a href="#contact" class="link">Learn more</a>
       </div>
     </article>
     <article class="wc reveal d1">
-      <div class="m"><img loading="lazy" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1100&q=85" alt="Organizations"></div>
+      <div class="m">
+        <div class="cslide on" data-cap="Volunteer Support" style="background-image:url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="cslide" data-cap="Fundraising Help" style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="cslide" data-cap="Advocacy &amp; Awareness" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="cslide" data-cap="Community Action" style="background-image:url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="ccap">Volunteer Support</div>
+      </div>
       <div class="b">
-        <h3>Organizations</h3>
-        <p>Delegations, exchanges, and initiatives that create value.</p>
-        <a href="#contact" class="link">Learn more</a>
+        <h3>Non-Profit &amp; Charities</h3>
+        <p>Amplify your mission through community engagement and support.</p>
       </div>
     </article>
     <article class="wc reveal d2">
-      <div class="m"><img loading="lazy" src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1100&q=85" alt="Partnerships"></div>
+      <div class="m">
+        <div class="cslide on" data-cap="Local Connections" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="cslide" data-cap="Bilateral Relations" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="cslide" data-cap="Global Brand Awareness" style="background-image:url('https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="cslide" data-cap="Trusted" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1100&q=85')"></div>
+        <div class="ccap">Local Connections</div>
+      </div>
       <div class="b">
-        <h3>Partnerships</h3>
-        <p>Collaboration that builds stronger, more connected communities.</p>
-        <a href="#contact" class="link">Learn more</a>
+        <h3>Gov &amp; Org's</h3>
+        <p>Local connections and global relationships that create lasting value.</p>
       </div>
     </article>
   </div>
@@ -451,6 +475,16 @@ links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.cl
 // Scroll reveal
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14,rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// "Who we work with" card carousels (staggered)
+document.querySelectorAll('.wc .m').forEach((m,ci)=>{
+  const slides=[...m.querySelectorAll('.cslide')];
+  const cap=m.querySelector('.ccap');
+  if(slides.length<2) return;
+  let i=0;
+  const set=(n)=>{i=n;slides.forEach((s,k)=>s.classList.toggle('on',k===n));if(cap)cap.textContent=slides[n].dataset.cap||'';};
+  set(0);
+  setTimeout(()=>{setInterval(()=>set((i+1)%slides.length),2600);},ci*850);
+});
 </script>
 </body>
 </html>
