@@ -56,7 +56,9 @@ header.nav.scrolled .nav-brand img{height:74px}
 /* ---------- HERO ---------- */
 .hero{position:relative;text-align:center;color:#fff;overflow:hidden;min-height:600px;height:86vh;display:flex;align-items:center;justify-content:center}
 .hero-bg{position:absolute;inset:0;background:#081a30 url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2600&q=90') center 42%/cover no-repeat;transform:scale(1.08);animation:heroZoom 18s var(--ease) forwards}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,14,26,.62) 0%,rgba(4,14,26,.32) 45%,rgba(4,14,26,.5) 100%)}
+.hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.hero-video iframe{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100vw;height:56.25vw;min-height:100%;min-width:177.78vh;border:0}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(4,14,26,.62) 0%,rgba(4,14,26,.32) 45%,rgba(4,14,26,.5) 100%)}
 @keyframes heroZoom{to{transform:scale(1)}}
 .hero-copy{position:relative;z-index:2;padding:0 22px}
 .hero h1{font-size:clamp(2.9rem,6.4vw,5.4rem);font-weight:600;letter-spacing:-.028em;line-height:1.04;text-shadow:0 2px 40px rgba(0,0,0,.4)}
@@ -229,6 +231,9 @@ footer.ft{background:#08203c;color:rgba(255,255,255,.72);font-size:.8rem;padding
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg"></div>
+  <div class="hero-video">
+    <iframe src="https://www.youtube.com/embed/_6w35El8pHU?autoplay=1&mute=1&loop=1&playlist=_6w35El8pHU&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&disablekb=1&fs=0&iv_load_policy=3" title="2 Degrees" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
   <div class="hero-copy">
     <h1>Creating the shift.</h1>
     <p class="lede">Learn. Lead. Impact.</p>
